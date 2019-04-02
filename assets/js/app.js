@@ -11,7 +11,21 @@ import css from "../css/app.css"
 //
 import "phoenix_html"
 
+
+
 // Import local files
 //
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
+import Reveal from './reveal';
+Reveal.initialize({
+  controls: false,
+  hash: true
+});
+
+Reveal.addEventListener( 'slidechanged', function( event ) {
+  console.log(event);
+  var state = Reveal.getState();
+  console.log(state);
+  console.log('changed');
+} );
