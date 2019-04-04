@@ -8,7 +8,8 @@
 use Mix.Config
 
 config :nearsoftcon,
-  ecto_repos: [Nearsoftcon.Repo]
+  ecto_repos: [Nearsoftcon.Repo],
+  circle_salt: System.get_env("circle_salt")
 
 # Configures the endpoint
 config :nearsoftcon, NearsoftconWeb.Endpoint,

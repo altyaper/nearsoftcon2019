@@ -6,15 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>NearsoftCon 2019</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   </head>
   <body>
-    <div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
     <%= render @view_module, @view_template, assigns %>
+    <script>window.userToken = "<%= assigns[:user_token] %>";</script>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
