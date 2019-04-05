@@ -2,6 +2,7 @@ defmodule NearsoftconWeb.Router do
   use NearsoftconWeb, :router
 
   @salt Application.get_env(:nearsoftcon, :circle_salt)
+  @secret_link Application.get_env(:nearsoftcon, :secret_link)
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -14,8 +15,6 @@ defmodule NearsoftconWeb.Router do
 
   defp put_user_token(conn, _) do
     random_string = randomizer(5)
-    IO.inspect("Esto es mi salt")
-    IO.inspect(@salt)
     token = Phoenix.Token.sign(conn, @salt, random_string)
     assign(conn, :user_token, token)
   end
@@ -54,8 +53,10 @@ defmodule NearsoftconWeb.Router do
 
   scope "/", NearsoftconWeb do
     pipe_through :browser
-
-    get "/", PageController, :index
+    IO.inspect(")))))))))))))))")
+    IO.inspect(@secret_link)
+    IO.inspect(")))))))))))))))")
+    get "/"<>@secret_link, PageController, :index
     get "/viewer", PageController, :viewer
   end
 
