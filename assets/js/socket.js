@@ -57,6 +57,11 @@ function add ({ id, color}) {
   render(members)
 }
 
+const removeMember = (member) => {
+  members = members.filter(m => m.id != member.id)
+  update(members)
+}
+
 render([])
 
 let randomColor = () => {
@@ -87,6 +92,10 @@ channel.join({id: 1})
 
 channel.on("user:entered", (userId) => {
   add({id:userId, color: '#F2F0F3'})
+});
+
+channel.on("user:leave", (user_id) => {
+  removeMember({id: user_id})
 });
 
 export default socket

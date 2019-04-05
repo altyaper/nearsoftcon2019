@@ -14,6 +14,9 @@ defmodule NearsoftconWeb.RoomChannel do
     {:noreply, socket}
   end
 
-  def terminate(reason, socket), do: :ok
+  def terminate(reason, socket) do
+    broadcast! socket, "user:leave", %{user_id: socket.assigns.user_id}
+    :ok
+  end
 
 end
