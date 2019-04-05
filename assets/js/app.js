@@ -3,7 +3,7 @@ import "phoenix_html";
 
 import socket from "./socket"
 
-import Reveal from './reveal';
+import Reveal from './reveal'
 
 Reveal.initialize({
   controls: false,
