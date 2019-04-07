@@ -4,7 +4,7 @@
 <div class="reveal">
   <div class="slides">
     <section class="slide-1" data-background-color="#fff">
-      <h1>2008</h1>
+      <h1>DEMO <a href="#"><%= @demo_link %></a>  </h1>
     </section>
     <section></section>
   </div>

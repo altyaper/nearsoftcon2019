@@ -4,12 +4,21 @@
 @import "./reset.css";
 @import "./reveal.css";
 
+.st0{
+  fill: #00A651;
+}
+
 * {
   font-family: 'Anton', sans-serif;
 }
 
 .slide-1 h1 {
   font-size: 300px;
+}
+
+.slide-1 a {
+  font-size: 56px;
+  display: block;
 }
 
 .dots {

@@ -1,6 +1,8 @@
+import * as d3 from './d3.v3';
+import color from './lib/color';
+
 const w = window.innerWidth
 const h = window.innerHeight
-let members = [];
 
 const svg = d3.select('.dots')
   .append('svg')
@@ -9,9 +11,14 @@ const svg = d3.select('.dots')
 
 let circle = svg.selectAll('circle')
 
-const force = d3.layout.force().size([w,h]).on('tick', () => {
-  circle.attr('cx', d => d.x).attr('cy', d => d.y)
-});
+const force = d3.layout.force()
+  .size([w,h])
+  .on('tick', () =>
+    circle
+      .attr('cx', d => d.x)
+      .attr('cy', d => d.y)
+  )
+
 
 const render = (members) => {
   circle = circle.data(members, d => d.id)
@@ -19,6 +26,7 @@ const render = (members) => {
   circle
     .enter()
       .append('circle')
+      .attr('stroke', '#979797')
       .attr('fill', d => d.color)
       .attr('r', 12)
       .call(force.drag)
@@ -34,49 +42,22 @@ const render = (members) => {
     .start()
 }
 
-const update = (items) => {
 
-  members = circle.data(items, d => d.id)
+/*
+  Next of all - store the data
+*/
 
-  members
-    .enter()
-      .append('circle')
-      .attr('fill', d => d.color)
-      .attr('r', Math.floor(Math.random() * 6) + 1)
+let members = []
 
-  members
-    .exit()
-      .transition()
-      .attr('r', 0)
-      .remove()
-}
-
-function add ({ id, color}) {
-  members.push({id, color});
+// helpers for adding and removing members
+function add ({ id, color, r}) {
+  members.push({ id, color});
   render(members)
 }
 
-const removeMember = (member) => {
-  members = members.filter(m => {
-    return m.id != member.id
-  })
+function remove (member) {
+  members = members.filter(m => m.id != member.id)
   render(members)
-}
-
-render([])
-
-let randomColor = () => {
-  var random = Math.floor(Math.random() * Math.floor(2));
-  return (random == 0) ? '#00FFC5' : '#F2F0F3';
-}
-
-function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
 }
 
 window.addEventListener('resize', () => {
@@ -95,6 +76,5 @@ window.addEventListener('resize', () => {
 
 export default {
   add,
-  update,
-  removeMember
-}
+  remove
+};

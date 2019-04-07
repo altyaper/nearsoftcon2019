@@ -1,4 +1,6 @@
 import circle from './circle'
+import Reveal from './reveal'
+import ctype from './circle_type';
 
 let e = (socket) => {
 
@@ -14,12 +16,37 @@ let e = (socket) => {
     });
 
   channel.on("user:entered", ({ user_id }) => {
-    circle.add({id: user_id, color: '#F2F0F3'})
+    var c = ctype.gray
+    c['id'] = user_id;
+    circle.add(c)
   });
 
   channel.on("user:leave", ({ user_id }) => {
-    circle.removeMember({id: user_id})
+    circle.remove({id: user_id})
   });
+
+  channel.on("new:ping", (user) => {
+    console.log(user.body, user.user);
+  });
+
+  channel.on('change:slide', (slide) => {
+    console.log(slide);
+  });
+
+  let reveal = document.getElementsByClassName('reveal');
+
+  // Verify is speaker screen is on
+  if(reveal.length) {
+    Reveal.initialize({
+      controls: false,
+      hash: true
+    });
+
+    Reveal.addEventListener( 'slidechanged', function( event ) {
+      var state = Reveal.getState();
+      channel.push('change:slide', {slide: state})
+    });
+  }
 
   return socket;
 
