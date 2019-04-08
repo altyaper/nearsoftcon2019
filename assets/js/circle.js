@@ -1,4 +1,4 @@
-import * as d3 from './d3.v3';
+import * as d3 from './lib/d3.v3';
 import color from './lib/color';
 
 const w = window.innerWidth
@@ -18,7 +18,6 @@ const force = d3.layout.force()
       .attr('cx', d => d.x)
       .attr('cy', d => d.y)
   )
-
 
 const render = (members) => {
   circle = circle.data(members, d => d.id)

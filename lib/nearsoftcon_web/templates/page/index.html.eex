@@ -3,41 +3,75 @@
 </div>
 <div class="reveal">
   <div class="slides">
-    <section class="slide-1" data-background-color="#f9f9f9">
+    <section class="slide-1" data-background-color="#f9f9f9" data-transition="slide-in fade-out">
       <a href="#"><%= @demo_link %></a>
       <h1>DEMO</h1>
-      <img src="<%= Routes.static_path(@conn, "/images/hart.png") %>" alt=""/>
+      <img class="fragment fade-in" src="<%= Routes.static_path(@conn, "/images/hart.png") %>" alt="Hart attact"/>
     </section>
-    <section class="slide-2" data-background-color="#f9f9f9">
-      <h1>I'm Jorge</h1>
-      <div class="images-slide">
+    <section class="slide-2" data-background-color="#f9f9f9" data-transition="fade-in slide-out">
+      <h1>I'm <b class="fragment fade-in">El</b> Jorge</h1>
+      <div class="images-slide fragment fade-in">
         <div class="img-txt">
           <img src="<%= Routes.static_path(@conn, "/images/twitter.png") %>" alt="twitter"/>
           <span>@jorgechavz</span>
         </div>
+        <img src="<%= Routes.static_path(@conn, "/images/nearsoftlogo.svg") %>" alt="twitter"/>
+        <img class="elixir-logo" src="<%= Routes.static_path(@conn, "/images/elixir-logo.png") %>" alt="Elixir"/>
       </div>
     </section>
     <section class="slide-3" data-background-color="#f9f9f9">
-      <h1 class="subtitle">Web APIs que <b>[Probablemente]</b> no sabías que existen</h1>
-      <h2><span>P</span><span>W</span><span>A</span></h2>
-    </section>
-    <section class="slide-3" data-background-color="#f9f9f9">
-      <h1 class="huge-title">2008</h1>
+      <h1 class="subtitle">Web APIs que <b class="fragment highlight-current-orange">[Probablemente]</b> no sabías que existen</h1>
     </section>
     <section class="slide-4" data-background-color="#f9f9f9">
-      <h1 class="huge-title">2009</h1>
+      <h1 class="huge-title">2008</h1>
     </section>
-    <section>
-      <h1>Vibracion</h1>
+    <section class="slide-5" data-background-color="#f9f9f9">
+      <img class="elixir-logo" src="<%= Routes.static_path(@conn, "/images/flashlogo.png") %>" alt="Flash logo"/>
     </section>
-    <section>
-      <h1>Sonido</h1>
+    <section class="slide-6" data-background-color="#f9f9f9">
+      <img class="elixir-logo" src="<%= Routes.static_path(@conn, "/images/html5logo.png") %>" alt="HTML5 logo"/>
     </section>
-    <section>
-      <h1>Geolocalizacion</h1>
+    <section class="slide-7" data-background-color="#f9f9f9">
+      <ul>
+        <li class="fragment fade-in"><strong>Canvas</strong></li>
+        <li class="fragment fade-in"><strong>SVG</strong></li>
+        <li class="fragment fade-in"><strong>Web Sockets</strong></li>
+        <li class="fragment fade-in"><strong>Audio</strong></li>
+        <li class="fragment fade-in"><strong>Drag & Drop</strong></li>
+        <li class="fragment fade-in"><strong>Web RTC</strong></li>
+        <li class="fragment fade-in"><strong>Local Storage</strong></li>
+        <li class="fragment fade-in"><strong>Geolocation</strong></li>
+      </ul>
     </section>
-    <section>
-      <h1>Visibility</h1>
+    <section class="slide-8" data-background-color="#f9f9f9">
+      <h1 class="huge-title">2014</h1>
+    </section>
+    <section class="slide-9"></section>
+    <section class="slide-10">
+      <h1>Battery status</h1>
+      <pre>
+        <code class='javascript'>
+          navigator.getBattery()
+            .then((battery) => {
+
+              alert(battery);
+
+            });
+        </code>
+      </pre>
+    </section>
+    <section class="slide-11">
+      <h1>Location</h1>
+      <pre>
+        <code class='javascript'>
+          navigator.getlocation
+            .getCurrentPosition((position) => {
+
+              alert(position.coords.latitude);
+              
+            });
+        </code>
+      </pre>
     </section>
   </div>
 </div>

@@ -18,7 +18,7 @@
 }
 
 .subtitle b {
-  color: #ff5252;
+  color: #efefef;
 }
 
 /* SLIDE 1 */
@@ -43,10 +43,19 @@
 
 /* SLIDE 1 */
 
+.slide-2 .images-slide {
+  margin-top: 30px;
+}
+
 .slide-2 .images-slide .img-txt {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 20px;
+}
+
+.elixir-logo {
+  margin-left: 50px;
 }
 
 .slide-2 .images-slide .img-txt span {
@@ -101,7 +110,47 @@
   border-radius: 50%;
 }
 
-/* SLIDE 4 */
+/* SLIDE 5 */
+/* SLIDE 6 */
+.slide-6 img {
+  max-width: 100%;
+  width: 400px;
+}
+
+/*  SLIDE 7 */
+.slide-7 li {
+  font-size: 30px;
+  margin: 40px 0;
+  display: block;
+}
+
+/* SLIDE 10 */
+.slide-10 {
+  text-align: left;
+}
+
+.slide-10 h1{
+    font-size: 50px;
+}
+
+.slide-10 .hljs {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-size: 30px;
+}
+
+/* SLIDE 11 */
+.slide-11 {
+  text-align: left;
+}
+
+.slide-11 h1{
+    font-size: 50px;
+}
+
+.slide-11 .hljs {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-size: 30px;
+}
 
 .huge-title {
   font-size: 300px;
@@ -127,4 +176,8 @@
   background-color: #00FFC5;
   border: 0;
   border-radius: 50%;
+}
+
+.circle-control.gray {
+  background-color: gray;
 }

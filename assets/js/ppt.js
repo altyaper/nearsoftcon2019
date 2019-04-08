@@ -1,15 +1,17 @@
 import circle from './circle'
-import Reveal from './reveal'
+import Reveal from './lib/reveal'
 import ctype from './circle_type';
 import actions from './actions';
+import hljs from 'highlight.js';
+import javascript from 'highlight.js/lib/languages/javascript';
+hljs.registerLanguage('javascript', javascript);
+import 'highlight.js/styles/tomorrow.css';
+hljs.initHighlightingOnLoad();
 
 let reveal = document.getElementsByClassName('reveal');
 
 let e = (socket) => {
 
-  if(!reveal.length){
-    return;
-  }
   socket.connect()
   let channel = socket.channel("room:joined", {})
 
@@ -22,7 +24,7 @@ let e = (socket) => {
     });
 
   channel.on("user:entered", ({ user_id }) => {
-    var c = ctype.green
+    var c = ctype.gray
     c['id'] = user_id;
     circle.add(c)
   });
@@ -36,17 +38,15 @@ let e = (socket) => {
   });
 
   channel.on('change:slide', ({ slide }) => {
-    actions.actions(slide, socket, channel);
+    if(!reveal.length) {
+        actions.actions(slide, socket, channel);
+    }
   });
 
-  channel.on('api:sound', () => {
-    // if(!reveal.length) {
-      // var context = new AudioContext()
-      // var o = context.createOscillator()
-      // o.type = "sine"
-      // o.connect(context.destination)
-      // o.start()
-    // }
+  channel.on('battery:api', ({ battery, user_id }) => {
+    if(reveal.length) {
+      console.log(battery);
+    }
   });
 
   channel.on("visibility:change", ({visibility, user_id}) => {
@@ -57,6 +57,7 @@ let e = (socket) => {
 
   // Verify is speaker screen is on
   if(reveal.length) {
+
     Reveal.initialize({
       controls: false,
       hash: true

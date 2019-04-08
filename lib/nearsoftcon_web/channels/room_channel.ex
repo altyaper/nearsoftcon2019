@@ -26,6 +26,12 @@ defmodule NearsoftconWeb.RoomChannel do
     {:noreply, socket}
   end
 
+  def handle_in("battery:api", battery, socket) do
+    user_id = socket.assigns.user_id
+    broadcast! socket, "battery:api", %{battery: battery, user_id: user_id}
+    {:noreply, socket}
+  end
+
   def handle_in("api:sound", _message, socket) do
     broadcast! socket, "api:sound", %{}
     {:noreply, socket}
