@@ -26,10 +26,9 @@ const render = (members) => {
   circle
     .enter()
       .append('circle')
-      .attr('stroke', '#979797')
+      .attr('id', d => d.id)
       .attr('fill', d => d.color)
       .attr('r', 12)
-      .call(force.drag)
 
   circle
     .exit()
@@ -60,6 +59,11 @@ function remove (member) {
   render(members)
 }
 
+function updateCircle (member) {
+  remove(member)
+  add(member)
+}
+
 window.addEventListener('resize', () => {
   const w = window.innerWidth
   const h = window.innerHeight
@@ -76,5 +80,6 @@ window.addEventListener('resize', () => {
 
 export default {
   add,
-  remove
+  remove,
+  updateCircle
 };

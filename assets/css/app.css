@@ -1,6 +1,4 @@
 /* This file is for your main application css. */
-
-@import "./phoenix.css";
 @import "./reset.css";
 @import "./reveal.css";
 
@@ -9,16 +7,104 @@
 }
 
 * {
-  font-family: 'Anton', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* COMMON */
+.subtitle {
+  font-size: 50px;
+  line-height: 70px;
+  color: #1f1f1f;
+}
+
+.subtitle b {
+  color: #ff5252;
+}
+
+/* SLIDE 1 */
+
+.slide-1 {
+  text-align: left;
+  display: none;
 }
 
 .slide-1 h1 {
-  font-size: 300px;
+  font-size: 200px;
+  text-align: left;
+  display: inline-block;
+  color: #1f1f1f;
 }
 
 .slide-1 a {
-  font-size: 56px;
+  font-size: 50px;
   display: block;
+  text-align: left;
+}
+
+/* SLIDE 1 */
+
+.slide-2 .images-slide .img-txt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-2 .images-slide .img-txt span {
+  color: #00acee;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.slide-2 .images-slide {
+  text-align: left;
+  display: flex;
+}
+
+.slide-2 img {
+  height: 80px;
+}
+
+.slide-2 h1 {
+  font-size: 150px;
+  text-align: left;
+  text-shadow: 1px 1px 5px rgba(0,0,0, 0.2)
+}
+
+/* SLIDE 3 */
+
+.slide-3 h1 {
+  font-weight: bold;
+}
+
+.slide-3 h2 {
+  position: relative;
+  z-index: 2;
+  color: #1f1f1f;
+}
+
+.slide-3 h2 span:nth-child(2) {
+  color: #5820C0;
+}
+
+.slide-3 h2 {
+  font-size: 80px;
+  width: 120px;
+  height: 120px;
+  border: 3px solid #ff52524d;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+/* SLIDE 4 */
+
+.huge-title {
+  font-size: 300px;
 }
 
 .dots {

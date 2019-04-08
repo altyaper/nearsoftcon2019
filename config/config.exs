@@ -11,7 +11,7 @@ config :nearsoftcon,
   ecto_repos: [Nearsoftcon.Repo],
   circle_salt: System.get_env("circle_salt"),
   secret_link: System.get_env("secret_admin"),
-  demo_link: "http://google.com"
+  demo_link: "bit.ly/nearsoftcon2019"
 
 # Configures the endpoint
 config :nearsoftcon, NearsoftconWeb.Endpoint,

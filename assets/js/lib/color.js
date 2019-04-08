@@ -4,8 +4,10 @@ let randomColor = () => {
 }
 
 const gray = '#F2F0F3';
+const green = '#00FFC5';
 
 export default {
     randomColor,
-    gray
+    gray,
+    green
 }

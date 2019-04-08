@@ -1,9 +1,15 @@
 import circle from './circle'
 import Reveal from './reveal'
 import ctype from './circle_type';
+import actions from './actions';
+
+let reveal = document.getElementsByClassName('reveal');
 
 let e = (socket) => {
 
+  if(!reveal.length){
+    return;
+  }
   socket.connect()
   let channel = socket.channel("room:joined", {})
 
@@ -16,7 +22,7 @@ let e = (socket) => {
     });
 
   channel.on("user:entered", ({ user_id }) => {
-    var c = ctype.gray
+    var c = ctype.green
     c['id'] = user_id;
     circle.add(c)
   });
@@ -29,11 +35,25 @@ let e = (socket) => {
     console.log(user.body, user.user);
   });
 
-  channel.on('change:slide', (slide) => {
-    console.log(slide);
+  channel.on('change:slide', ({ slide }) => {
+    actions.actions(slide, socket, channel);
   });
 
-  let reveal = document.getElementsByClassName('reveal');
+  channel.on('api:sound', () => {
+    // if(!reveal.length) {
+      // var context = new AudioContext()
+      // var o = context.createOscillator()
+      // o.type = "sine"
+      // o.connect(context.destination)
+      // o.start()
+    // }
+  });
+
+  channel.on("visibility:change", ({visibility, user_id}) => {
+    var c = ctype.green;
+    c["id"] = user_id;
+    circle.updateCircle(c);
+  });
 
   // Verify is speaker screen is on
   if(reveal.length) {

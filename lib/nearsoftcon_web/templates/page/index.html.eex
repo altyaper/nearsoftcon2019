@@ -3,9 +3,41 @@
 </div>
 <div class="reveal">
   <div class="slides">
-    <section class="slide-1" data-background-color="#fff">
-      <h1>DEMO <a href="#"><%= @demo_link %></a>  </h1>
+    <section class="slide-1" data-background-color="#f9f9f9">
+      <a href="#"><%= @demo_link %></a>
+      <h1>DEMO</h1>
+      <img src="<%= Routes.static_path(@conn, "/images/hart.png") %>" alt=""/>
     </section>
-    <section></section>
+    <section class="slide-2" data-background-color="#f9f9f9">
+      <h1>I'm Jorge</h1>
+      <div class="images-slide">
+        <div class="img-txt">
+          <img src="<%= Routes.static_path(@conn, "/images/twitter.png") %>" alt="twitter"/>
+          <span>@jorgechavz</span>
+        </div>
+      </div>
+    </section>
+    <section class="slide-3" data-background-color="#f9f9f9">
+      <h1 class="subtitle">Web APIs que <b>[Probablemente]</b> no sabías que existen</h1>
+      <h2><span>P</span><span>W</span><span>A</span></h2>
+    </section>
+    <section class="slide-3" data-background-color="#f9f9f9">
+      <h1 class="huge-title">2008</h1>
+    </section>
+    <section class="slide-4" data-background-color="#f9f9f9">
+      <h1 class="huge-title">2009</h1>
+    </section>
+    <section>
+      <h1>Vibracion</h1>
+    </section>
+    <section>
+      <h1>Sonido</h1>
+    </section>
+    <section>
+      <h1>Geolocalizacion</h1>
+    </section>
+    <section>
+      <h1>Visibility</h1>
+    </section>
   </div>
 </div>

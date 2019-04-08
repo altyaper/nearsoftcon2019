@@ -20,6 +20,17 @@ defmodule NearsoftconWeb.RoomChannel do
     {:noreply, socket}
   end
 
+  def handle_in("visibility:change", visibility, socket) do
+    user_id = socket.assigns.user_id
+    broadcast! socket, "visibility:change", %{visibility: visibility, user_id: user_id}
+    {:noreply, socket}
+  end
+
+  def handle_in("api:sound", _message, socket) do
+    broadcast! socket, "api:sound", %{}
+    {:noreply, socket}
+  end
+
   def handle_info({:after_join, user_id}, socket) do
     broadcast! socket, "user:entered", %{user_id: user_id}
     push socket, "join", %{status: "connected"}

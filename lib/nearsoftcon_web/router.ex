@@ -26,7 +26,8 @@ defmodule NearsoftconWeb.Router do
   scope "/", NearsoftconWeb do
     pipe_through :browser
     get "/"<>@secret_link, PageController, :index
-    get "/viewer", PageController, :viewer
+    get "/:something", PageController, :viewer
+    get "/", PageController, :viewer
   end
 
   # Other scopes may use custom stacks.
