@@ -1,21 +1,16 @@
 import viewer from './viewer';
+
 let actions = (action, socket, channel) => {
+  viewer.setSlideClass(action);
   switch (action) {
     case 8:
       viewer.changeColorGray()
       break;
     case 9:
-      // if(Battery) {
-      //   Battery.getStatus((status, error) => {
-      //     if(error) {
-      //       console.error('Battery status is not supported');
-      //       return;
-      //     }
-      //     console.log(status);
-      //   });
-      // }
+
       break;
     case 10:
+
     var options = {
       enableHighAccuracy: true,
       timeout: 5000,
@@ -23,19 +18,36 @@ let actions = (action, socket, channel) => {
     };
 
     function success(pos) {
-      alert(pos)
       var crd = pos.coords;
-      console.log('Your current position is:');
-      console.log(`Latitude : ${crd.latitude}`);
-      console.log(`Longitude: ${crd.longitude}`);
-      console.log(`More or less ${crd.accuracy} meters.`);
+      viewer.setLocation(crd);
     }
 
     function error(err) {
-      alert(err)
       console.warn(`ERROR(${err.code}): ${err.message}`);
     }
-      navigator.geolocation.getCurrentPosition(success, error, options);
+
+    function handlePermission() {
+      navigator.permissions.query({name:'geolocation'}).then((result) => {
+        if (result.state == 'granted') {
+          report(result.state);
+          navigator.geolocation.getCurrentPosition(success, error, options);
+        } else if (result.state == 'prompt') {
+          report(result.state);
+          navigator.geolocation.getCurrentPosition(success, error, options);
+        } else if (result.state == 'denied') {
+          report(result.state);
+        }
+        result.onchange = () => {
+          report(result.state);
+        }
+      });
+    }
+
+    function report(state) {
+      console.log('Permission ' + state);
+    }
+
+    handlePermission();
       break;
     default:
 

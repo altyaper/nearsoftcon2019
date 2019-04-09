@@ -68,10 +68,26 @@
             .getCurrentPosition((position) => {
 
               alert(position.coords.latitude);
-              
+
             });
         </code>
       </pre>
+    </section>
+    <section class="slide-12">
+      <h1>Orientation</h1>
+      <pre>
+        <code class='javascript'>
+          navigator.getlocation
+            .getCurrentPosition((position) => {
+
+              alert(position.coords.latitude);
+
+            });
+        </code>
+      </pre>
+    </section>
+    <section class="slide-13">
+      
     </section>
   </div>
 </div>

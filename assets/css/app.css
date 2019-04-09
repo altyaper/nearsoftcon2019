@@ -8,6 +8,7 @@
 
 * {
   font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
 }
 
 /* COMMON */
@@ -152,6 +153,20 @@
   font-size: 30px;
 }
 
+/* SLIDE 12 */
+.slide-12 {
+  text-align: left;
+}
+
+.slide-12 h1{
+    font-size: 50px;
+}
+
+.slide-12 .hljs {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-size: 30px;
+}
+
 .huge-title {
   font-size: 300px;
 }
@@ -170,14 +185,37 @@
   width: 100%;
   height: 100%;
 }
+
 .circle-control {
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
   background-color: #00FFC5;
   border: 0;
-  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .circle-control.gray {
   background-color: gray;
+}
+
+.circle-control.slide-10 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.location-info {
+  background: #f9f9f9;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.location-info li {
+  margin: 10px 0;
 }
