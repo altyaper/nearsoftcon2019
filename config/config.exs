@@ -11,7 +11,8 @@ config :nearsoftcon,
   ecto_repos: [Nearsoftcon.Repo],
   circle_salt: System.get_env("circle_salt"),
   secret_link: System.get_env("secret_admin"),
-  demo_link: "bit.ly/nearsoftcon2019"
+  demo_link: "bit.ly/nearsoftcon2019",
+  ngrok: "http://192.168.1.65:4000/3uzeb1OCXXcZdUDne0aGgicKc5qa5NW6byYN67j20tBAoAHJPJcAlhOwvYGxjrCI8fDWKyGVExGEqtfnq3fJuxYKC8XvmMJyeat1QOt3L8d3hCZQrt0QkyIjjzipcWp9uDFn3ixxRHHT95TXdLMJClDjBTc7Pvlen0jB1KoX4wKgrb3yPbclGy2BG69MQC1m1eBEEPe9#/"
 
 # Configures the endpoint
 config :nearsoftcon, NearsoftconWeb.Endpoint,

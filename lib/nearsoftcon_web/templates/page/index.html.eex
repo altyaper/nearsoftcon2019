@@ -47,7 +47,7 @@
       <h1 class="huge-title">2014</h1>
     </section>
     <section class="slide-9"></section>
-    <section class="slide-10">
+    <section class="slide-10 slide-example">
       <h1>Battery status</h1>
       <pre>
         <code class='javascript'>
@@ -60,7 +60,7 @@
         </code>
       </pre>
     </section>
-    <section class="slide-11">
+    <section class="slide-11 slide-example">
       <h1>Location</h1>
       <pre>
         <code class='javascript'>
@@ -73,7 +73,7 @@
         </code>
       </pre>
     </section>
-    <section class="slide-12">
+    <section class="slide-12 slide-example">
       <h1>Orientation</h1>
       <pre>
         <code class='javascript'>
@@ -86,8 +86,32 @@
         </code>
       </pre>
     </section>
-    <section class="slide-13">
-      
+    <section class="slide-13 slide-example">
+      <h1>Audio & Video</h1>
+      <pre>
+        <code class='javascript'>
+          navigator.getUserMedia({video: true}, (stream) => {
+
+            alert(URL.createObjectUrl(stream))
+
+          }, () => {});
+        </code>
+      </pre>
+    </section>
+    <section class="slide-14 slide-example">
+      <h1>Audio</h1>
+      <pre>
+        <code class='javascript'>
+            var audioCtx = new AudioContext();
+
+            var oscillator = audioCtx.createOscillator();
+
+            oscillator.type = 'square';
+            oscillator.frequency.setValueAtTime(3000, audioCtx.currentTime);
+            oscillator.connect(audioCtx.destination);
+            oscillator.start();
+        </code>
+      </pre>
     </section>
   </div>
 </div>

@@ -7,6 +7,7 @@ import javascript from 'highlight.js/lib/languages/javascript';
 hljs.registerLanguage('javascript', javascript);
 import 'highlight.js/styles/tomorrow.css';
 hljs.initHighlightingOnLoad();
+var state = 0;
 
 let reveal = document.getElementsByClassName('reveal');
 
@@ -59,13 +60,13 @@ let e = (socket) => {
   if(reveal.length) {
 
     Reveal.initialize({
-      controls: false,
+      controls: true,
       hash: true
     });
 
     Reveal.addEventListener( 'slidechanged', function( event ) {
-      var state = Reveal.getState();
-      channel.push('change:slide', {slide: state})
+      state = Reveal.getState();
+      channel.push('change:slide', { slide: state})
     });
   }
 
