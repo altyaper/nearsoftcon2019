@@ -1,0 +1,14 @@
+<div class="battery-status" id="battery-wrapper">
+  <div class="wrapp-battery">
+    <div class="battery">
+      <div class="battery-slot full" id="battery-slot"></div>
+    </div>
+    <div class="bolt">
+      <img src="<%= Routes.static_path(@conn, "/images/bolt.svg") %>" alt="Hart attact"/>
+    </div>
+  </div>
+  <div class="battery-info">
+    <p id="chargingState"></p>
+    <p id="level"></p>
+  </div>
+</div>

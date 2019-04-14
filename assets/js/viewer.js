@@ -1,3 +1,5 @@
+import logger from './lib/error_report';
+
 function changeColorGray() {
   var circle = document.getElementById('circle-viewer');
   circle.classList.toggle("gray");
@@ -15,8 +17,11 @@ function setLocation(location) {
 }
 
 function setSlideClass(index) {
+
   var circle = document.getElementById('circle-viewer');
+
   var classes = circle.classList.value.split(' ');
+  logger.logError('quws')
   classes.filter((clazz) => {
     var regex = new RegExp("slide-[0-10]+");
     console.log(regex);

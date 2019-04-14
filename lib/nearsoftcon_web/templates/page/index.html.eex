@@ -5,11 +5,12 @@
   <div class="slides">
     <section class="slide-1" data-background-color="#f9f9f9" data-transition="slide-in fade-out">
       <a href="#"><%= @demo_link %></a>
-      <h1>DEMO</h1>
+      <h1>DEM</h1>
+      <img class="example" src="<%= Routes.static_path(@conn, "/images/example.svg") %>" alt="Iphone meta information"/>
       <img class="fragment fade-in" src="<%= Routes.static_path(@conn, "/images/hart.png") %>" alt="Hart attact"/>
     </section>
     <section class="slide-2" data-background-color="#f9f9f9" data-transition="fade-in slide-out">
-      <h1>I'm <b class="fragment fade-in">El</b> Jorge</h1>
+      <h1>I'm <b class="fragment fade-in">El</b> <b class="fragment fade-in">El</b> Jorge</h1>
       <div class="images-slide fragment fade-in">
         <div class="img-txt">
           <img src="<%= Routes.static_path(@conn, "/images/twitter.png") %>" alt="twitter"/>
@@ -19,7 +20,7 @@
         <img class="elixir-logo" src="<%= Routes.static_path(@conn, "/images/elixir-logo.png") %>" alt="Elixir"/>
       </div>
     </section>
-    <section class="slide-3" data-background-color="#f9f9f9">
+    <section class="slide-3" data-background-color="#f9f9f9" data-transition="zoom">
       <h1 class="subtitle">Web APIs que <b class="fragment highlight-current-orange">[Probablemente]</b> no sabías que existen</h1>
     </section>
     <section class="slide-4" data-background-color="#f9f9f9">
@@ -31,7 +32,7 @@
     <section class="slide-6" data-background-color="#f9f9f9">
       <img class="elixir-logo" src="<%= Routes.static_path(@conn, "/images/html5logo.png") %>" alt="HTML5 logo"/>
     </section>
-    <section class="slide-7" data-background-color="#f9f9f9">
+    <section class="slide-7" data-background-color="#f9f9f9" data-transition="slide zoom">
       <ul>
         <li class="fragment fade-in"><strong>Canvas</strong></li>
         <li class="fragment fade-in"><strong>SVG</strong></li>
@@ -47,6 +48,9 @@
       <h1 class="huge-title">2014</h1>
     </section>
     <section class="slide-9"></section>
+    <section class="slide-9-1">
+      <img class="elixir-logo" src="<%= Routes.static_path(@conn, "/images/meta.svg") %>" alt="Iphone meta information"/>
+    </section>
     <section class="slide-10 slide-example">
       <h1>Battery status</h1>
       <pre>
@@ -86,6 +90,9 @@
         </code>
       </pre>
     </section>
+    <section>
+      <img class="elixir-logo" src="<%= Routes.static_path(@conn, "/images/input.svg") %>" alt="Iphone meta information"/>
+    </section>
     <section class="slide-13 slide-example">
       <h1>Audio & Video</h1>
       <pre>
@@ -97,6 +104,21 @@
           }, () => {});
         </code>
       </pre>
+    </section>
+    <section class="slide-example">
+      <h1>Ambient light</h1>
+      <pre>
+        <code class='javascript'>
+          navigator.getUserMedia({video: true}, (stream) => {
+
+            alert(URL.createObjectUrl(stream))
+
+          }, () => {});
+        </code>
+      </pre>
+    </section>
+    <section class="slide-14-1">
+      <img class="elixir-logo" src="<%= Routes.static_path(@conn, "/images/output.svg") %>" alt="Iphone meta information"/>
     </section>
     <section class="slide-14 slide-example">
       <h1>Audio</h1>
@@ -110,6 +132,14 @@
             oscillator.frequency.setValueAtTime(3000, audioCtx.currentTime);
             oscillator.connect(audioCtx.destination);
             oscillator.start();
+        </code>
+      </pre>
+    </section>
+    <section class="slide-example">
+      <h1>Vibration</h1>
+      <pre>
+        <code class='javascript'>
+            window.navigator.vibrate([125])
         </code>
       </pre>
     </section>

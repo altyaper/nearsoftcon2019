@@ -1,3 +1,10 @@
 <div class="dot">
   <a href="<%=  @ngrok %>" id="circle-viewer" data-id="<%= assigns[:user_token] %>" class="circle-control"></a>
+  <%= render NearsoftconWeb.PartialView, "battery.html", assigns %>
+</div>
+<div class="error-report">
+  <a href="#">X</a>
+  <div class="inner-report">
+
+  </div>
 </div>

@@ -6,6 +6,10 @@
   fill: #00A651;
 }
 
+.example {
+  height: 300px;
+}
+
 * {
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
@@ -24,22 +28,33 @@
 
 /* SLIDE 1 */
 
+.slide-1 img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .slide-1 {
   text-align: left;
-  display: none;
 }
 
 .slide-1 h1 {
   font-size: 200px;
-  text-align: left;
+  text-align: center;
   display: inline-block;
   color: #1f1f1f;
+  vertical-align: middle;
+  margin-right: 20px;
 }
 
 .slide-1 a {
   font-size: 50px;
   display: block;
-  text-align: left;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.slide-1 #Page-1 circle {
+  fill: 'red';
 }
 
 /* SLIDE 1 */
@@ -200,4 +215,88 @@
 
 .location-info li {
   margin: 10px 0;
+}
+
+.battery-status {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px;
+}
+
+.battery-status .battery {
+  width: 50px;
+  height: 30px;
+  font-size: 0;
+
+}
+
+.wrapp-battery {
+  position: relative;
+  text-align: center;
+  border: 1px solid rgb(102, 172, 175);
+  display: inline-block;
+}
+
+#battery-wrapper.not-supported .wrapp-battery {
+  border-color: gray;
+}
+
+#battery-wrapper.not-supported .battery .battery-slot.full {
+  background-color: gray;
+}
+
+.bolt {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.bolt img {
+  height: 30px;
+}
+
+.dark-theme {
+  background-color: black;
+}
+
+.dark-theme .battery-info {
+  color: white;
+}
+
+.battery-status .battery .battery-slot {
+  background: gray;
+  display: inline-block;
+  height: 30px;
+  width: 10%;
+  position: absolute;
+  left: 0;
+}
+
+.battery-info {
+  display: inline-block;
+}
+
+.battery-status .battery .battery-slot.full {
+  background: rgb(102, 172, 175);
+}
+
+.error-report {
+  position: absolute;
+  overflow-y: scroll;
+  height: 200px;
+  background: red;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 10px;
+  color: white;
+  word-wrap: break-word;
+}
+
+
+@media only screen and (min-width: 600px) {
+  .error-report {
+    display: none
+  }
 }

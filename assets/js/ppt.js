@@ -1,5 +1,6 @@
-import circle from './circle'
-import Reveal from './lib/reveal'
+import circle from './circle';
+import Reveal from './lib/reveal';
+import logger from './lib/error_report';
 import ctype from './circle_type';
 import actions from './actions';
 import hljs from 'highlight.js';
@@ -18,19 +19,27 @@ let e = (socket) => {
 
   channel.join()
     .receive("ok", resp => {
+      logger.logError(JSON.stringify(resp));
       console.log("Joined to channel room:joined");
     })
     .receive("error", resp => {
+      logger.logError(JSON.stringify(resp));
       console.error("Error joining room:joined channel room", resp);
     });
 
   channel.on("user:entered", ({ user_id }) => {
+    logger.logError({user_id});
     var c = ctype.gray
     c['id'] = user_id;
     circle.add(c)
+    if(reveal.length) {
+      state = Reveal.getState();
+      channel.push('change:slide', { slide: state})
+    }
   });
 
   channel.on("user:leave", ({ user_id }) => {
+    logger.logError(JSON.stringify({leave: 'user leaver', user_id}));
     circle.remove({id: user_id})
   });
 
@@ -40,13 +49,14 @@ let e = (socket) => {
 
   channel.on('change:slide', ({ slide }) => {
     if(!reveal.length) {
+        logger.logError({change_slide: slide});
         actions.actions(slide, socket, channel);
     }
   });
 
   channel.on('battery:api', ({ battery, user_id }) => {
     if(reveal.length) {
-      console.log(battery);
+      circle.updateCircleBattery(user_id, battery.battery);
     }
   });
 

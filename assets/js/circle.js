@@ -1,4 +1,4 @@
-import * as d3 from './lib/d3.v3';
+import * as d3 from '../vendor/d3.v3';
 import color from './lib/color';
 
 const w = window.innerWidth
@@ -63,6 +63,10 @@ function updateCircle (member) {
   add(member)
 }
 
+function updateCircleBattery(user_id, battery) {
+
+}
+
 window.addEventListener('resize', () => {
   const w = window.innerWidth
   const h = window.innerHeight
@@ -80,5 +84,6 @@ window.addEventListener('resize', () => {
 export default {
   add,
   remove,
-  updateCircle
+  updateCircle,
+  updateCircleBattery
 };
