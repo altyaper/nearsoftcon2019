@@ -4,13 +4,19 @@
 <div class="reveal">
   <div class="slides">
     <section class="slide-1" data-background-color="#f9f9f9" data-transition="slide-in fade-out">
-      <a href="#"><%= @demo_link %></a>
-      <h1>DEM</h1>
-      <img class="example" src="<%= Routes.static_path(@conn, "/images/example.svg") %>" alt="Iphone meta information"/>
+      <!-- <a href="#"><%= @demo_link %></a> -->
+      <h1>DEMO</h1>
+      <!-- <img class="example" src="<%= Routes.static_path(@conn, "/images/example.svg") %>" alt="Iphone meta information"/> -->
       <img class="fragment fade-in" src="<%= Routes.static_path(@conn, "/images/hart.png") %>" alt="Hart attact"/>
     </section>
+    <section data-background-color="#f9f9f9">
+      <div class="block-lock">
+        <img class="lock-iphone" src="<%= Routes.static_path(@conn, "/images/ios-lock.png") %>" alt="block"/>
+        <img class="lock-iphone" src="<%= Routes.static_path(@conn, "/images/android-lock.png") %>" alt="block"/>
+      </div>
+    </section>
     <section class="slide-2" data-background-color="#f9f9f9" data-transition="fade-in slide-out">
-      <h1>I'm <b class="fragment fade-in">El</b> <b class="fragment fade-in">El</b> Jorge</h1>
+      <h1>I'm <b class="fragment fade-in">El</b><br/> Jorge</h1>
       <div class="images-slide fragment fade-in">
         <div class="img-txt">
           <img src="<%= Routes.static_path(@conn, "/images/twitter.png") %>" alt="twitter"/>
@@ -25,23 +31,23 @@
     </section>
     <section class="slide-4" data-background-color="#f9f9f9">
       <h1 class="huge-title">2008</h1>
+      <img class="web-button fragment" src="<%= Routes.static_path(@conn, "/images/web_button.jpeg") %>" alt="Web 2.0 button"/>
     </section>
     <section class="slide-5" data-background-color="#f9f9f9">
-      <img class="elixir-logo" src="<%= Routes.static_path(@conn, "/images/flashlogo.png") %>" alt="Flash logo"/>
+      <img class="steave-thoughts" src="<%= Routes.static_path(@conn, "/images/flash_steave.png") %>" alt="Flash Steave Jobs"/>
     </section>
     <section class="slide-6" data-background-color="#f9f9f9">
       <img class="elixir-logo" src="<%= Routes.static_path(@conn, "/images/html5logo.png") %>" alt="HTML5 logo"/>
     </section>
     <section class="slide-7" data-background-color="#f9f9f9" data-transition="slide zoom">
       <ul>
-        <li class="fragment fade-in"><strong>Canvas</strong></li>
+        <li><strong>Canvas</strong></li>
         <li class="fragment fade-in"><strong>SVG</strong></li>
         <li class="fragment fade-in"><strong>Web Sockets</strong></li>
         <li class="fragment fade-in"><strong>Audio</strong></li>
         <li class="fragment fade-in"><strong>Drag & Drop</strong></li>
         <li class="fragment fade-in"><strong>Web RTC</strong></li>
         <li class="fragment fade-in"><strong>Local Storage</strong></li>
-        <li class="fragment fade-in"><strong>Geolocation</strong></li>
       </ul>
     </section>
     <section class="slide-8" data-background-color="#f9f9f9">
@@ -63,6 +69,34 @@
             });
         </code>
       </pre>
+    </section>
+    <section data-background-color="#f9f9f9">
+      <ul class="nice-list">
+        <li>
+          <div class="image-list">
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/charging.png") %>" alt="Icon charging"/>
+          </div>
+          <span>charging</span>
+        </li>
+        <li>
+          <div class="image-list">
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/chargingTime.png") %>" alt="Icon chargingTime"/>
+          </div>
+          <span>chargingTime</span>
+        </li>
+        <li>
+          <div class="image-list">
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/dischargingTime.png") %>" alt="Icon charging"/>
+          </div>
+          <span>dischargingTime</span>
+        </li>
+        <li>
+          <div class="image-list">
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/level.png") %>" alt="Icon charging"/>
+          </div>
+          <span>level</span>
+        </li>
+      </ul>
     </section>
     <section class="slide-11 slide-example">
       <h1>Location</h1>

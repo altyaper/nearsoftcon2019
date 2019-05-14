@@ -37,6 +37,16 @@ defmodule NearsoftconWeb.RoomChannel do
     {:noreply, socket}
   end
 
+  def handle_in("ppt:default", _message, socket) do
+    broadcast! socket, "ppt:default", %{}
+    {:noreply, socket}
+  end
+
+  def handle_in("location:api", _message, socket) do
+    broadcast! socket, "location:api", %{}
+    {:noreply, socket}
+  end
+
   def handle_info({:after_join, user_id}, socket) do
     broadcast! socket, "user:entered", %{user_id: user_id}
     push socket, "join", %{status: "connected"}

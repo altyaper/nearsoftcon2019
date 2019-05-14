@@ -4,12 +4,14 @@ var Battery = (function(self) {
   var chargingStateEl = document.getElementById('chargingState');
   var levelEl = document.getElementById('level');
   var batterySlot = document.getElementById('battery-slot');
+  var chargingTimeWrapper = document.getElementById('chargingTime')
   var batteryWrapper = document.getElementById('battery-wrapper')
   var battery = null;
 
   self.updateBatteryUI = function updateBatteryUI(battery) {
     let batteryLevel = battery.level;
-    levelEl.textContent = (batteryLevel * 100) + '%';
+    let chargingTime = battery.chargingTime;
+    levelEl.textContent = (Math.round(batteryLevel * 100)) + '%';
     batterySlot.setAttribute("style", "width: " + (batteryLevel * 100) + "%");
     var body = document.getElementsByTagName("BODY")[0];
     if (battery.charging === true) {
@@ -37,26 +39,25 @@ var Battery = (function(self) {
       self.updateBatteryUI.bind(null, battery));
     battery.addEventListener('chargingtimechange',
       self.updateBatteryUI.bind(null, battery));
-    }
+  }
 
-    return {
-      init: function() {
-        if ('getBattery' in navigator) {
-          navigator.getBattery().then(self.monitorBattery);
-          // channel.push('battery:api')
-        } else {
-          batteryWrapper.classList.add('not-supported');
-          logger.logError('The Battery Status API is not supported');
-        }
-      },
-      getBattery: function() {
-        return new Promise((resolve, reject) => {
-          navigator.getBattery().then((battery) => {
-            resolve(battery);
-          });
-        });
+  return {
+    init: function() {
+      if ('getBattery' in navigator) {
+        navigator.getBattery().then(self.monitorBattery);
+      } else {
+        batteryWrapper.classList.add('not-supported');
+        logger.logError('The Battery Status API is not supported');
       }
+    },
+    getBattery: function() {
+      return new Promise((resolve, reject) => {
+        navigator.getBattery().then((battery) => {
+          resolve(battery);
+        });
+      });
     }
+  }
 
 })(Battery || {});
 

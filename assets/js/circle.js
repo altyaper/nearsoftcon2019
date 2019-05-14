@@ -1,5 +1,6 @@
 import * as d3 from '../vendor/d3.v3';
 import color from './lib/color';
+import ctype from './circle_type';
 
 const w = window.innerWidth
 const h = window.innerHeight
@@ -9,7 +10,7 @@ const svg = d3.select('.dots')
     .attr('width', w)
     .attr('height', h)
 
-let circle = svg.selectAll('circle')
+let circle = svg.selectAll('circle').data([])
 
 const force = d3.layout.force()
   .size([w,h])
@@ -17,6 +18,7 @@ const force = d3.layout.force()
     circle
       .attr('cx', d => d.x)
       .attr('cy', d => d.y)
+      .attr('r', d => d.r)
   )
 
 const render = (members) => {
@@ -27,7 +29,10 @@ const render = (members) => {
       .append('circle')
       .attr('id', d => d.id)
       .attr('fill', d => d.color)
-      .attr('r', 12)
+      .attr('stroke', d => d.stroke)
+      .attr('stroke-width', d => d.strokeWidth)
+      .attr('r', d => 12)
+      .call(force.drag)
 
   circle
     .exit()
@@ -40,6 +45,18 @@ const render = (members) => {
     .start()
 }
 
+const updateAll = (members) => {
+  let svg = d3.select('svg');
+  svg.selectAll('circle')
+    .data(members)
+    .attr('id', d => d.id)
+    .attr('fill', d => d.color)
+    .attr('stroke', d => d.stroke)
+    .attr('stroke-width', d => d.strokeWidth)
+    .attr('r', d => 12)
+    .call(force.drag)
+}
+
 
 /*
   Next of all - store the data
@@ -48,8 +65,8 @@ const render = (members) => {
 let members = []
 
 // helpers for adding and removing members
-function add ({ id, color, r}) {
-  members.push({ id, color});
+function add({ id, color, r}) {
+  members.push({ id, color, r});
   render(members)
 }
 
@@ -58,13 +75,50 @@ function remove (member) {
   render(members)
 }
 
-function updateCircle (member) {
-  remove(member)
-  add(member)
+function update (user_id, {color, r}) {
+  members = members.map(m => {
+    if(m.id == member.id) {
+      m = member;
+      m.color = color;
+      m.r = r;
+    }
+    return m;
+  })
+  render(members);
+}
+
+function setDefault() {
+  members.map(m => {
+    m.color = color.gray;
+    m.r = 12;
+    m.strokeWidth = 0;
+  });
+  updateAll(members);
 }
 
 function updateCircleBattery(user_id, battery) {
-
+  let i;
+  members = members.map(m => {
+    if(user_id == m.id) {
+      i = m;
+      if (battery) {
+        const bigR = 15;
+        let level = battery.level;
+        let strokeWidth = (1 - level) * bigR;
+        let r = level * bigR;
+        m.color = color.green;
+        m.stroke = color.greenAlpha;
+        m.strokeWidth = strokeWidth;
+        if (battery.charging) {
+          m.color = color.red;
+          m.stroke = color.redAlpha;
+        }
+        m.r = r;
+      }
+    }
+    return m
+  });
+  updateAll(members)
 }
 
 window.addEventListener('resize', () => {
@@ -83,7 +137,8 @@ window.addEventListener('resize', () => {
 
 export default {
   add,
+  update,
   remove,
-  updateCircle,
+  setDefault,
   updateCircleBattery
 };

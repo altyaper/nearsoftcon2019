@@ -39,8 +39,8 @@ let e = (socket) => {
   });
 
   channel.on("user:leave", ({ user_id }) => {
-    logger.logError(JSON.stringify({leave: 'user leaver', user_id}));
-    circle.remove({id: user_id})
+    logger.logError(JSON.stringify({leave: 'user leaved', user_id}));
+    circle.remove({id: user_id});
   });
 
   channel.on("new:ping", (user) => {
@@ -54,16 +54,24 @@ let e = (socket) => {
     }
   });
 
+  channel.on('location:api', ({ user_id }) => {
+
+  });
+
   channel.on('battery:api', ({ battery, user_id }) => {
     if(reveal.length) {
       circle.updateCircleBattery(user_id, battery.battery);
     }
   });
 
+  channel.on('ppt:default', () => {
+    if(reveal.length) {
+      circle.setDefault();
+    }
+  })
+
   channel.on("visibility:change", ({visibility, user_id}) => {
-    var c = ctype.green;
-    c["id"] = user_id;
-    circle.updateCircle(c);
+    circle.update(user_id, ctype.gray);
   });
 
   // Verify is speaker screen is on

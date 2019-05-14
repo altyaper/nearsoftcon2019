@@ -10,5 +10,6 @@
   <div class="battery-info">
     <p id="chargingState"></p>
     <p id="level"></p>
+    <p id="chargingTime"></p>
   </div>
 </div>
