@@ -54,8 +54,8 @@ let e = (socket) => {
     }
   });
 
-  channel.on('location:api', ({ user_id }) => {
-
+  channel.on('location:api', ({position, user_id}) => {
+    circle.updateCircleLocation(user_id, position.position)
   });
 
   channel.on('battery:api', ({ battery, user_id }) => {
@@ -63,6 +63,12 @@ let e = (socket) => {
       circle.updateCircleBattery(user_id, battery.battery);
     }
   });
+
+  channel.on('orientation:api', ({ orientation, user_id}) => {
+    if(reveal.length) {
+      circle.updateCircleOrientation(user_id, orientation.orientation);
+    }
+  })
 
   channel.on('ppt:default', () => {
     if(reveal.length) {

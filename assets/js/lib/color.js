@@ -8,10 +8,13 @@ const green = '#00FFC5';
 const greenAlpha = '#E4F9F3';
 const red = '#F48383';
 const redAlpha = '#F9E4E4';
+const blue = '#83CBFF';
 
 export default {
     randomColor,
     gray,
+    blue,
+    greenAlpha,
     green,
     red,
     redAlpha,

@@ -10,7 +10,7 @@ const svg = d3.select('.dots')
     .attr('width', w)
     .attr('height', h)
 
-let circle = svg.selectAll('circle').data([])
+let circle = svg.selectAll('circle');
 
 const force = d3.layout.force()
   .size([w,h])
@@ -32,7 +32,6 @@ const render = (members) => {
       .attr('stroke', d => d.stroke)
       .attr('stroke-width', d => d.strokeWidth)
       .attr('r', d => 12)
-      .call(force.drag)
 
   circle
     .exit()
@@ -54,9 +53,7 @@ const updateAll = (members) => {
     .attr('stroke', d => d.stroke)
     .attr('stroke-width', d => d.strokeWidth)
     .attr('r', d => 12)
-    .call(force.drag)
 }
-
 
 /*
   Next of all - store the data
@@ -121,6 +118,44 @@ function updateCircleBattery(user_id, battery) {
   updateAll(members)
 }
 
+function updateCircleLocation(user_id, position) {
+  members = members.map(m => {
+    if(user_id == m.id) {
+      if(position) {
+        m.color = color.green;
+      }
+    }
+    return m;
+  })
+  updateAll(members);
+}
+
+function updateCircleOrientation(user_id, orientation) {
+  members = members.map(m => {
+      if(user_id == m.id) {
+        switch (orientation) {
+          case 'portrait-primary':
+            m.color = color.green;
+            break;
+          case 'portrait-secondary':
+            m.color = color.green;
+            break;
+          case 'landscape-primary':
+            m.color = color.blue;
+            break;
+          case 'landscape-secondary':
+            m.color = color.blue;
+            break;
+          default:
+            m.color = color.gray;
+      }
+    }
+    m.r = 12;
+    return m;
+  });
+  updateAll(members);
+}
+
 window.addEventListener('resize', () => {
   const w = window.innerWidth
   const h = window.innerHeight
@@ -140,5 +175,7 @@ export default {
   update,
   remove,
   setDefault,
-  updateCircleBattery
+  updateCircleBattery,
+  updateCircleLocation,
+  updateCircleOrientation
 };

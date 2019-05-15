@@ -2,19 +2,6 @@ import logger from './error_report';
 
 let Location = ((self) => {
 
-  // function setMap(lat, lng) {
-  //   logger.logError(lat, lng);
-  //   var map;
-  //   var selector = document.getElementById('map');
-  //   var uluru = { lat, lng };
-  //   console.log(lat, lng);
-  //   // map = new google.maps.Map(selector, {
-  //   //   center: uluru,
-  //   //   zoom: 8
-  //   // });
-  //   // var marker = new google.maps.Marker({position: uluru, map: map});
-  // }
-
   function error(error) {
     switch(error.code) {
       case error.PERMISSION_DENIED:
@@ -45,20 +32,30 @@ let Location = ((self) => {
         if ("geolocation" in navigator) {
           /* geolocation is available */
           if (navigator.geolocation) {
-            if (navigator.geolocation.getCurrentPosition) {
-              var options = {
-                enableHighAccuracy: true,
-                timeout: 5000,
-                maximumAge: 0
-              };
-              navigator.geolocation.getCurrentPosition((position) => {
-                resolve(position)
-              }, (error) => {
+            var options = {
+              enableHighAccuracy: true,
+              timeout: 5000,
+              maximumAge: 0
+            };
+            navigator.geolocation.getCurrentPosition((position) => {
+              if (position) {
+                let coords = position.coords;
+                let curatedPosition = {
+                  latitude: coords.latitude,
+                  longitude: coords.longitude,
+                  isPositionAvailable: true
+                }
+                resolve(curatedPosition)
+              }
+            }, (error) => {
+
+              if(navigator.geolocation) {
+                resolve({isPositionAvailable: true})
+              } else {
+                logger.logError(error.message)
                 reject(error);
-              }, options)
-            } else {
-              reject(false);
-            }
+              }
+            }, options)
           } else {
               reject(false);
           }

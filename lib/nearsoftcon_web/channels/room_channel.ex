@@ -26,12 +26,6 @@ defmodule NearsoftconWeb.RoomChannel do
     {:noreply, socket}
   end
 
-  def handle_in("battery:api", battery, socket) do
-    user_id = socket.assigns.user_id
-    broadcast! socket, "battery:api", %{battery: battery, user_id: user_id}
-    {:noreply, socket}
-  end
-
   def handle_in("api:sound", _message, socket) do
     broadcast! socket, "api:sound", %{}
     {:noreply, socket}
@@ -42,8 +36,25 @@ defmodule NearsoftconWeb.RoomChannel do
     {:noreply, socket}
   end
 
-  def handle_in("location:api", _message, socket) do
-    broadcast! socket, "location:api", %{}
+  def handle_in("battery:api", battery, socket) do
+    user_id = socket.assigns.user_id
+    broadcast! socket, "battery:api", %{battery: battery, user_id: user_id}
+    {:noreply, socket}
+  end
+
+  def handle_in("location:api", position, socket) do
+    user_id = socket.assigns.user_id
+    broadcast! socket, "location:api", %{position: position, user_id: user_id}
+    {:noreply, socket}
+  end
+
+  def handle_in("orientation:api", orientation, socket) do
+    user_id = socket.assigns.user_id
+    IO.inspect('AQUIIIII')
+    IO.inspect(orientation)
+    IO.inspect(user_id)
+    IO.inspect('AQUIIIII')
+    broadcast! socket, "orientation:api", %{orientation: orientation, user_id: user_id}
     {:noreply, socket}
   end
 

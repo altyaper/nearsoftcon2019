@@ -111,16 +111,60 @@
         </code>
       </pre>
     </section>
+    <section data-background-color="#f9f9f9">
+      <img class="google-message" src="<%= Routes.static_path(@conn, "/images/google_message.png") %>" alt="Location API not supported because HTTPS"/>
+    </section>
+    <section data-background-color="#f9f9f9">
+      <ul class="nice-list nice-list-small">
+        <li>
+          <div class="image-list">
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/latitude.png") %>" alt="Icon charging"/>
+          </div>
+          <span>latitude</span>
+        </li>
+        <li>
+          <div class="image-list">
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/longitude.png") %>" alt="Icon chargingTime"/>
+          </div>
+          <span>longitude</span>
+        </li>
+        <li class="fragment fade-in">
+          <div class="image-list">
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/altitude.png") %>" alt="Icon charging"/>
+          </div>
+          <span>altitude</span>
+        </li>
+        <li class="fragment fade-in">
+          <div class="image-list">
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/accuracy.png") %>" alt="Icon charging"/>
+          </div>
+          <span>accuracy</span>
+        </li>
+        <li class="fragment fade-in">
+          <div class="image-list">
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/altitude_accuracy.png") %>" alt="Icon charging"/>
+          </div>
+          <span>altitudeAccuracy</span>
+        </li>
+        <li class="fragment fade-in">
+          <div class="image-list">
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/heading.png") %>" alt="Icon charging"/>
+          </div>
+          <span>heading</span>
+        </li>
+        <li class="fragment fade-in">
+          <div class="image-list">
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/speed.png") %>" alt="Icon charging"/>
+          </div>
+          <span>speed</span>
+        </li>
+      </ul>
+    </section>
     <section class="slide-12 slide-example">
       <h1>Orientation</h1>
       <pre>
         <code class='javascript'>
-          navigator.getlocation
-            .getCurrentPosition((position) => {
-
-              alert(position.coords.latitude);
-
-            });
+          var orientation = window.screen.orientation;
         </code>
       </pre>
     </section>

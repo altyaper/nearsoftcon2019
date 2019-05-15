@@ -2,6 +2,24 @@
 @import "./reset.css";
 @import "./reveal.css";
 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#roberto-face {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin: 30px auto;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+ }
+
+.google-message {
+  width: 100%;
+}
 
 .nice-list .image-list {
   width: 300px;
@@ -14,6 +32,20 @@
   font-size: 50px;
   margin: 40px 0px;
   text-align: left;
+}
+
+.nice-list.nice-list-small .image-list {
+  width: auto;
+}
+
+.nice-list.nice-list-small li {
+  font-size: 20px;
+  margin: 20px 0px;
+  font-weight: bold;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 40px;
 }
 
 .nice-list .icon-list {
@@ -335,7 +367,7 @@
 }
 
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 1000px) {
   .error-report {
     display: none
   }
