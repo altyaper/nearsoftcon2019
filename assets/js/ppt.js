@@ -70,6 +70,13 @@ let e = (socket) => {
     }
   })
 
+  channel.on('audiovideo:api', ({ audiovideo, user_id}) => {
+    if(reveal.length) {
+      circle.updateCircleAudioVideo(user_id, audiovideo.audiovideo);
+    }
+  });
+
+
   channel.on('ppt:default', () => {
     if(reveal.length) {
       circle.setDefault();

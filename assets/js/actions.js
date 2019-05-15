@@ -3,6 +3,7 @@ import logger from './lib/error_report';
 import Battery from './lib/battery';
 import Location from './lib/location.js';
 import Orientation from './lib/orientation.js';
+import AudioVideo from './lib/audio_video.js';
 
 let actions = (action, socket, channel) => {
   switch (action) {
@@ -44,6 +45,9 @@ let actions = (action, socket, channel) => {
           channel.push('orientation:api', { orientation: usableOrientation });
         }
       }
+      break;
+    case 19:
+      channel.push('audiovideo:api', { audiovideo: AudioVideo.isApiSupported() })
       break;
     default:
       channel.push("ppt:default");

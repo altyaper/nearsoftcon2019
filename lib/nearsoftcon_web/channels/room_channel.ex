@@ -48,6 +48,12 @@ defmodule NearsoftconWeb.RoomChannel do
     {:noreply, socket}
   end
 
+  def handle_in("audiovideo:api", audiovideo, socket) do
+    user_id = socket.assigns.user_id
+    broadcast! socket, "audiovideo:api", %{audiovideo: audiovideo, user_id: user_id}
+    {:noreply, socket}
+  end
+
   def handle_in("orientation:api", orientation, socket) do
     user_id = socket.assigns.user_id
     broadcast! socket, "orientation:api", %{orientation: orientation, user_id: user_id}
