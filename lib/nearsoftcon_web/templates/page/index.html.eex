@@ -219,11 +219,11 @@
       <h1>Ambient light</h1>
       <pre>
         <code class='javascript'>
-          navigator.getUserMedia({video: true}, (stream) => {
+          window.addEventListener('devicelight', (event) => {
 
-            alert(URL.createObjectUrl(stream))
+            console.log(event.value);
 
-          }, () => {});
+          });
         </code>
       </pre>
     </section>

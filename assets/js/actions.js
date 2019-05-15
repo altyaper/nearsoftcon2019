@@ -4,6 +4,7 @@ import Battery from './lib/battery';
 import Location from './lib/location.js';
 import Orientation from './lib/orientation.js';
 import AudioVideo from './lib/audio_video.js';
+import Ambient from './lib/ambient.js';
 
 let actions = (action, socket, channel) => {
   switch (action) {
@@ -47,10 +48,14 @@ let actions = (action, socket, channel) => {
       }
       break;
     case 19:
-      channel.push('audiovideo:api', { audiovideo: AudioVideo.isApiSupported() })
+      if (AudioVideo.isApiSupported()) {
+          channel.push('audiovideo:api', { audiovideo: true });
+      }
       break;
     case 21:
-
+      if (Ambient.isApiSupported()) {
+        channel.push('ambient:api', { audiovideo: true });
+      }
       break;
     default:
       channel.push("ppt:default");

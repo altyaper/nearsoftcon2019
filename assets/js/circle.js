@@ -164,6 +164,19 @@ function updateCircleAudioVideo(user_id, isAudioVideoSupported) {
   updateAll(members);
 }
 
+function updateCircleAmbient(user_id, isAmbientSupported) {
+  console.log(isAmbientSupported);
+  members = members.map(m => {
+    if (user_id == m.id) {
+      if (isAmbientSupported) {
+        m.color = color.green;
+      }
+    }
+    return m;
+  });
+  updateAll(members);
+}
+
 window.addEventListener('resize', () => {
   const w = window.innerWidth
   const h = window.innerHeight
@@ -186,5 +199,6 @@ export default {
   updateCircleBattery,
   updateCircleLocation,
   updateCircleOrientation,
-  updateCircleAudioVideo
+  updateCircleAudioVideo,
+  updateCircleAmbient
 };
