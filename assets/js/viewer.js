@@ -1,8 +1,33 @@
 import logger from './lib/error_report';
 
+var circle = document.getElementById('circle-viewer');
+
 function changeColorGray() {
-  var circle = document.getElementById('circle-viewer');
-  circle.classList.toggle("gray");
+  circle.classList.remove('circle-yellow');
+  circle.classList.remove('circle-blue');
+  circle.classList.remove('circle-purple');
+  circle.classList.add("circle-gray");
+}
+
+function changeColorBlue() {
+  circle.classList.remove('circle-gray');
+  circle.classList.remove('circle-purple');
+  circle.classList.remove('circle-yellow');
+  circle.classList.add('circle-blue');
+}
+
+function changeColorYellow() {
+  circle.classList.remove('circle-gray');
+  circle.classList.remove('circle-purple');
+  circle.classList.remove('circle-blue');
+  circle.classList.add('circle-yellow');
+}
+
+function changeColorPurple() {
+  circle.classList.remove('circle-gray');
+  circle.classList.remove('circle-yellow');
+  circle.classList.remove('circle-blue');
+  circle.classList.add('circle-purple');
 }
 
 function setLocation(location) {
@@ -28,6 +53,9 @@ function setSlideClass(index) {
 }
 
 export default {
+  changeColorPurple,
+  changeColorBlue,
+  changeColorYellow,
   changeColorGray,
   setLocation,
   setSlideClass

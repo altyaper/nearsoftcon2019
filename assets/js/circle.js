@@ -177,6 +177,34 @@ function updateCircleAmbient(user_id, isAmbientSupported) {
   updateAll(members);
 }
 
+function updateCircleTouch(user_id, fingers) {
+  members = members.map(m => {
+    if(user_id == m.id) {
+      switch (fingers) {
+        case 0:
+          m.color = color.gray;
+          break;
+        case 1:
+          m.color = color.blue;
+          break;
+        case 2:
+          m.color = color.blue;
+          break;
+        case 3:
+          m.color = color.purple;
+          break;
+        case 21:
+          m.color = color.yellow;
+          break;
+        default:
+          m.color = color.green;
+      }
+    }
+    return m;
+  });
+  updateAll(members)
+}
+
 window.addEventListener('resize', () => {
   const w = window.innerWidth
   const h = window.innerHeight
@@ -200,5 +228,6 @@ export default {
   updateCircleLocation,
   updateCircleOrientation,
   updateCircleAudioVideo,
-  updateCircleAmbient
+  updateCircleAmbient,
+  updateCircleTouch
 };

@@ -1,5 +1,5 @@
 <div class="dot">
-  <a href="<%=  @ngrok %>" id="circle-viewer" data-id="<%= assigns[:user_token] %>" class="circle-control"></a>
+  <span href="<%=  @ngrok %>" id="circle-viewer" data-id="<%= assigns[:user_token] %>" class="circle-control"></span>
   <%= render NearsoftconWeb.PartialView, "battery.html", assigns %>
   <%= render NearsoftconWeb.PartialView, "orientation.html", assigns %>
 </div>

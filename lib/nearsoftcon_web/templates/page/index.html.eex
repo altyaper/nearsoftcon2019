@@ -212,7 +212,7 @@
         </code>
       </pre>
     </section>
-    <section class="portal-slide" data-background-image="<%= Routes.static_path(@conn, "/images/portal.png") %>">
+    <section data-background-size="contain" data-background-image="<%= Routes.static_path(@conn, "/images/portal.png") %>">
 
     </section>
     <section class="slide-example">
@@ -226,6 +226,40 @@
           });
         </code>
       </pre>
+    </section>
+    <section class="slide-example">
+      <h1>Touch</h1>
+      <pre>
+        <code class='javascript'>
+          window.addEventListener('devicelight', (event) => {
+
+            console.log(event.value);
+
+          });
+        </code>
+      </pre>
+    </section>
+    <section data-background-color="#f9f9f9">
+      <ul class="nice-list">
+        <li>
+          <div class="image-list">
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/touchstart.png") %>" alt="Touch start"/>
+          </div>
+          <span>Touch start</span>
+        </li>
+        <li>
+          <div class="image-list">
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/touchmove.png") %>" alt="Touch start"/>
+          </div>
+          <span>Touch move</span>
+        </li>
+        <li>
+          <div class="image-list">
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/touchend.png") %>" alt="Touch start"/>
+          </div>
+          <span>Touch end</span>
+        </li>
+      </ul>
     </section>
     <section class="slide-14-1">
       <img class="elixir-logo" src="<%= Routes.static_path(@conn, "/images/output.svg") %>" alt="Iphone meta information"/>

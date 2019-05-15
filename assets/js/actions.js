@@ -5,6 +5,7 @@ import Location from './lib/location.js';
 import Orientation from './lib/orientation.js';
 import AudioVideo from './lib/audio_video.js';
 import Ambient from './lib/ambient.js';
+import TouchApi from './lib/touch.js';
 
 let actions = (action, socket, channel) => {
   switch (action) {
@@ -56,6 +57,9 @@ let actions = (action, socket, channel) => {
       if (Ambient.isApiSupported()) {
         channel.push('ambient:api', { audiovideo: true });
       }
+      break;
+    case 22:
+      TouchApi.init(channel);
       break;
     default:
       channel.push("ppt:default");

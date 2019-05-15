@@ -52,6 +52,7 @@ let e = (socket) => {
         logger.logError({change_slide: slide});
         actions.actions(slide, socket, channel);
     }
+    window.slide = slide;
   });
 
   channel.on('location:api', ({position, user_id}) => {
@@ -79,6 +80,12 @@ let e = (socket) => {
   channel.on('ambient:api', ({ ambient, user_id}) => {
     if(reveal.length) {
       circle.updateCircleAmbient(user_id, ambient.ambient);
+    }
+  });
+
+  channel.on('touch:api', ({ fingers, user_id}) => {
+    if(reveal.length) {
+      circle.updateCircleTouch(user_id, fingers.fingers);
     }
   });
 

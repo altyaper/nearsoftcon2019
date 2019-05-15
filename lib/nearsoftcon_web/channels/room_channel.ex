@@ -66,6 +66,12 @@ defmodule NearsoftconWeb.RoomChannel do
     {:noreply, socket}
   end
 
+  def handle_in("touch:api", fingers, socket) do
+    user_id = socket.assigns.user_id
+    broadcast! socket, "touch:api", %{fingers: fingers, user_id: user_id}
+    {:noreply, socket}
+  end
+
   def handle_info({:after_join, user_id}, socket) do
     broadcast! socket, "user:entered", %{user_id: user_id}
     push socket, "join", %{status: "connected"}

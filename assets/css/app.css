@@ -8,10 +8,6 @@
   box-sizing: border-box;
 }
 
-.portal-slide .slide-background-content {
-  background-size: contain;
-}
-
 .big-image {
   height: 100%;
 }
@@ -262,6 +258,22 @@
   border: 0;
   border-radius: 50%;
   transition: all 0.2s ease;
+}
+
+#circle-viewer.circle-green {
+  background-color: #2BFEC6;
+}
+
+#circle-viewer.circle-blue {
+  background-color: #83CBFF;
+}
+
+#circle-viewer.circle-purple {
+  background-color: #BC9CFF;
+}
+
+#circle-viewer.circle-yellow {
+  background-color: #FFEF9C;
 }
 
 .circle-control:hover {
