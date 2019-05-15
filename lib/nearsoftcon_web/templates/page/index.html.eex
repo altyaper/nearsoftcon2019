@@ -212,6 +212,9 @@
         </code>
       </pre>
     </section>
+    <section class="portal-slide" data-background-image="<%= Routes.static_path(@conn, "/images/portal.png") %>">
+
+    </section>
     <section class="slide-example">
       <h1>Ambient light</h1>
       <pre>

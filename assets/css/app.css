@@ -8,6 +8,14 @@
   box-sizing: border-box;
 }
 
+.portal-slide .slide-background-content {
+  background-size: contain;
+}
+
+.big-image {
+  height: 100%;
+}
+
 #nokia-slide h1 {
   font-size: 50px;
 }

@@ -49,6 +49,9 @@ let actions = (action, socket, channel) => {
     case 19:
       channel.push('audiovideo:api', { audiovideo: AudioVideo.isApiSupported() })
       break;
+    case 21:
+
+      break;
     default:
       channel.push("ppt:default");
   }
