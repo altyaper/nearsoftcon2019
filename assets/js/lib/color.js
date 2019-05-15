@@ -9,9 +9,13 @@ const greenAlpha = '#E4F9F3';
 const red = '#F48383';
 const redAlpha = '#F9E4E4';
 const blue = '#83CBFF';
+const purple = '#BC9CFF';
+const yellow = '#FFEF9C';
 
 export default {
     randomColor,
+    yellow,
+    purple,
     gray,
     blue,
     greenAlpha,

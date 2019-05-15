@@ -50,10 +50,6 @@ defmodule NearsoftconWeb.RoomChannel do
 
   def handle_in("orientation:api", orientation, socket) do
     user_id = socket.assigns.user_id
-    IO.inspect('AQUIIIII')
-    IO.inspect(orientation)
-    IO.inspect(user_id)
-    IO.inspect('AQUIIIII')
     broadcast! socket, "orientation:api", %{orientation: orientation, user_id: user_id}
     {:noreply, socket}
   end

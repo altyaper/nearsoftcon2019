@@ -168,6 +168,35 @@
         </code>
       </pre>
     </section>
+    <section id="nokia-slide" data-background-color="#f9f9f9">
+      <h1>Type</h1>
+      <ul class="nice-list">
+        <li>
+          <div class="image-list">
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/landscape-primary.png") %>" alt="Nokia landscape"/>
+          </div>
+          <span>Landscape Primary</span>
+        </li>
+        <li>
+          <div class="image-list">
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/landscape-secondary.png") %>" alt="Nokia landscape"/>
+          </div>
+          <span>Landscape Secondary</span>
+        </li>
+        <li>
+          <div class="image-list">
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/portrait-primary.png") %>" alt="Nokia portrait"/>
+          </div>
+          <span>Portrait Secondary</span>
+        </li>
+        <li>
+          <div class="image-list">
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/portrait-secondary.png") %>" alt="Nokia landscape"/>
+          </div>
+          <span>Portrait Secondary</span>
+        </li>
+      </ul>
+    </section>
     <section>
       <img class="elixir-logo" src="<%= Routes.static_path(@conn, "/images/input.svg") %>" alt="Iphone meta information"/>
     </section>

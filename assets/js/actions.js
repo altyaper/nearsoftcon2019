@@ -37,7 +37,11 @@ let actions = (action, socket, channel) => {
       if(Orientation.isApiSupported()) {
         if(orientation.type) {
           logger.logError(orientation.type)
-          channel.push('orientation:api', { orientation: orientation.type });
+          let usableOrientation = {
+            type: orientation.type,
+            angle: orientation.angle
+          }
+          channel.push('orientation:api', { orientation: usableOrientation });
         }
       }
       break;

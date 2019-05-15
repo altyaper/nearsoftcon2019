@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+#nokia-slide h1 {
+  font-size: 50px;
+}
+
 #roberto-face {
     width: 150px;
     height: 150px;

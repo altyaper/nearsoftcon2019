@@ -55,10 +55,6 @@ const updateAll = (members) => {
     .attr('r', d => 12)
 }
 
-/*
-  Next of all - store the data
-*/
-
 let members = []
 
 // helpers for adding and removing members
@@ -133,18 +129,18 @@ function updateCircleLocation(user_id, position) {
 function updateCircleOrientation(user_id, orientation) {
   members = members.map(m => {
       if(user_id == m.id) {
-        switch (orientation) {
+        switch (orientation.type) {
           case 'portrait-primary':
             m.color = color.green;
             break;
           case 'portrait-secondary':
-            m.color = color.green;
+            m.color = color.blue;
             break;
           case 'landscape-primary':
-            m.color = color.blue;
+            m.color = color.yellow;
             break;
           case 'landscape-secondary':
-            m.color = color.blue;
+            m.color = color.purple;
             break;
           default:
             m.color = color.gray;
