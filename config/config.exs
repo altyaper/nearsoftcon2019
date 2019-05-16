@@ -1,18 +1,12 @@
-# This file is responsible for configuring your application
-# and its dependencies with the aid of the Mix.Config module.
-#
-# This configuration file is loaded before any dependency and
-# is restricted to this project.
-
-# General application configuration
 use Mix.Config
 
 config :nearsoftcon,
-  ecto_repos: [Nearsoftcon.Repo],
+  ecto_repos: [Nearsoftcon.Repo]
+
+config :nearsoftcon,
   circle_salt: System.get_env("circle_salt"),
   secret_link: System.get_env("secret_admin"),
-  demo_link: "bit.ly/nearsoftcon2019",
-  ngrok: "http://192.168.1.65:4000/3uzeb1OCXXcZdUDne0aGgicKc5qa5NW6byYN67j20tBAoAHJPJcAlhOwvYGxjrCI8fDWKyGVExGEqtfnq3fJuxYKC8XvmMJyeat1QOt3L8d3hCZQrt0QkyIjjzipcWp9uDFn3ixxRHHT95TXdLMJClDjBTc7Pvlen0jB1KoX4wKgrb3yPbclGy2BG69MQC1m1eBEEPe9#/"
+  demo_link: "bit.ly/nearsoftcon2019"
 
 # Configures the endpoint
 config :nearsoftcon, NearsoftconWeb.Endpoint,
