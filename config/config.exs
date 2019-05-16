@@ -3,11 +3,6 @@ use Mix.Config
 config :nearsoftcon,
   ecto_repos: [Nearsoftcon.Repo]
 
-config :nearsoftcon,
-  circle_salt: System.get_env("circle_salt"),
-  secret_link: System.get_env("secret_admin"),
-  demo_link: "bit.ly/nearsoftcon2019"
-
 # Configures the endpoint
 config :nearsoftcon, NearsoftconWeb.Endpoint,
   url: [host: "localhost"],
@@ -22,6 +17,11 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+config :nearsoftcon,
+  circle_salt: System.get_env("circle_salt"),
+  secret_link: System.get_env("secret_admin"),
+  demo_link: "bit.ly/nearsoftcon2019"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
