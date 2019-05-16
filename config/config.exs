@@ -19,8 +19,8 @@ config :logger, :console,
 config :phoenix, :json_library, Jason
 
 config :nearsoftcon,
-  circle_salt: System.get_env("circle_salt"),
-  secret_link: System.get_env("secret_admin"),
+  circle_salt: System.get_env("CIRCLE_SALT"),
+  secret_link: System.get_env("SECRET_ADMIN"),
   demo_link: "bit.ly/nearsoftcon2019"
 
 # Import environment specific config. This must remain at the bottom
