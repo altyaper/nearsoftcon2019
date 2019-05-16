@@ -27,6 +27,11 @@ let e = (socket) => {
       console.error("Error joining room:joined channel room", resp);
     });
 
+    var c = ctype.gray
+    for (var i = 0; i < 400; i++) {
+      c.id = i;
+      circle.add(c)
+    }
   channel.on("user:entered", ({ user_id }) => {
     logger.logError({user_id});
     var c = ctype.gray

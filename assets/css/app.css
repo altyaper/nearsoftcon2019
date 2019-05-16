@@ -57,7 +57,7 @@
 }
 
 .nice-list .icon-list {
-  height: 90px;
+  height: 150px;
   display: inline-block;
   margin-right: 20px;
 }
@@ -230,6 +230,10 @@
 .slide-example .hljs {
   background-color: rgba(0, 0, 0, 0.05);
   font-size: 30px;
+}
+
+.slide-example.slide-example-small .hljs {
+  font-size: 20px;
 }
 
 .huge-title {

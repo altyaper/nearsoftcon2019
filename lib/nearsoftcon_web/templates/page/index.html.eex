@@ -4,7 +4,7 @@
 <div class="reveal">
   <div class="slides">
     <section class="slide-1" data-background-color="#f9f9f9" data-transition="slide-in fade-out">
-      <!-- <a href="#"><%= @demo_link %></a> -->
+      <a href="#"><%= @demo_link %></a>
       <h1>DEMO</h1>
       <!-- <img class="example" src="<%= Routes.static_path(@conn, "/images/example.svg") %>" alt="Iphone meta information"/> -->
       <img class="fragment fade-in" src="<%= Routes.static_path(@conn, "/images/hart.png") %>" alt="Hart attact"/>
@@ -227,11 +227,25 @@
         </code>
       </pre>
     </section>
-    <section class="slide-example">
+    <section class="slide-example slide-example-small">
       <h1>Touch</h1>
       <pre>
         <code class='javascript'>
-          window.addEventListener('devicelight', (event) => {
+          var element = document.getElementById('circle-viewer');
+
+          element.addEventListener('touchstart', (event) => {
+
+            console.log(event.value);
+
+          });
+
+          element.addEventListener('touchmove', (event) => {
+
+            console.log(event.value);
+
+          });
+
+          element.addEventListener('touchend', (event) => {
 
             console.log(event.value);
 
