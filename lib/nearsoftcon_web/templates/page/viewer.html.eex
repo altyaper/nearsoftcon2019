@@ -1,7 +1,11 @@
+<a href="https://ivory-dramatic-steed.gigalixirapp.com">https://ivory-dramatic-steed.gigalixirapp.com</a>
 <div class="dot">
   <span id="circle-viewer" data-id="<%= assigns[:user_token] %>" class="circle-control"></span>
-  <%= render NearsoftconWeb.PartialView, "battery.html", assigns %>
-  <%= render NearsoftconWeb.PartialView, "orientation.html", assigns %>
+  <div id="top-options">
+    <%= render NearsoftconWeb.PartialView, "battery.html", assigns %>
+    <%= render NearsoftconWeb.PartialView, "map.html", assigns %>
+    <%= render NearsoftconWeb.PartialView, "orientation.html", assigns %>
+  </div>
 </div>
 <div class="error-report">
   <a href="#">X</a>

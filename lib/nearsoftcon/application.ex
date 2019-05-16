@@ -8,8 +8,6 @@ defmodule Nearsoftcon.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
-      # Start the Ecto repository
-      Nearsoftcon.Repo,
       # Start the endpoint when the application starts
       NearsoftconWeb.Endpoint
       # Starts a worker by calling: Nearsoftcon.Worker.start_link(arg)

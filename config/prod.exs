@@ -7,11 +7,4 @@ config :nearsoftcon, NearsoftconWeb.Endpoint,
   server: true,
   secret_key_base: "${SECRET_KEY_BASE}"
 
-config :nearsoftcon, Nearsoftcon.Repo,
-  adapter: Ecto.Adapters.Posgres,
-  url: "${DATABASE_URL}",
-  database: "",
-  ssl: true,
-  pool_size: 1
-
 config :logger, level: :info
