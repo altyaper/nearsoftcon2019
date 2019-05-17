@@ -188,7 +188,7 @@ function updateCircleTouch(user_id, fingers) {
           m.color = color.blue;
           break;
         case 2:
-          m.color = color.blue;
+          m.color = color.red;
           break;
         case 3:
           m.color = color.purple;

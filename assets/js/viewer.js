@@ -2,31 +2,33 @@ import logger from './lib/error_report';
 
 var circle = document.getElementById('circle-viewer');
 
+function reset() {
+  circle.className = '';
+  circle.classList.add('circle-control');
+}
+
+function changeColorRed() {
+  reset();
+  circle.classList.add("circle-red");
+}
+
 function changeColorGray() {
-  circle.classList.remove('circle-yellow');
-  circle.classList.remove('circle-blue');
-  circle.classList.remove('circle-purple');
+  reset();
   circle.classList.add("circle-gray");
 }
 
 function changeColorBlue() {
-  circle.classList.remove('circle-gray');
-  circle.classList.remove('circle-purple');
-  circle.classList.remove('circle-yellow');
+  reset();
   circle.classList.add('circle-blue');
 }
 
 function changeColorYellow() {
-  circle.classList.remove('circle-gray');
-  circle.classList.remove('circle-purple');
-  circle.classList.remove('circle-blue');
+  reset();
   circle.classList.add('circle-yellow');
 }
 
 function changeColorPurple() {
-  circle.classList.remove('circle-gray');
-  circle.classList.remove('circle-yellow');
-  circle.classList.remove('circle-blue');
+  reset();
   circle.classList.add('circle-purple');
 }
 
@@ -53,6 +55,7 @@ function setSlideClass(index) {
 }
 
 export default {
+  changeColorRed,
   changeColorPurple,
   changeColorBlue,
   changeColorYellow,

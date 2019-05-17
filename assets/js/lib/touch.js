@@ -10,6 +10,7 @@ let TouchApi = ((self) => {
         if (event || window.slide == 22) {
           let fingers = event.targetTouches.length;
           channel.push('touch:api', { fingers });
+          logger.logError('Fingers: ' + fingers);
           switch (fingers) {
             case 0:
               viewer.changeColorGray();
@@ -18,7 +19,7 @@ let TouchApi = ((self) => {
               viewer.changeColorBlue();
               break;
             case 2:
-              viewer.changeColorBlue();
+              viewer.changeColorRed();
               break;
             case 3:
               viewer.changeColorPurple();
@@ -29,7 +30,6 @@ let TouchApi = ((self) => {
             default:
               viewer.changeColorGreen();
           }
-          viewer.changeColorBlue();
         }
       }, false);
       obj.addEventListener('touchmove', () => {

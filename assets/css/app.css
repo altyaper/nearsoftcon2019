@@ -288,6 +288,10 @@
   background-color: #FFEF9C;
 }
 
+#circle-viewer.circle-red {
+  background-color: #F48383;
+}
+
 .circle-control:hover {
   background-color: #3fffd3;
   cursor: pointer;
