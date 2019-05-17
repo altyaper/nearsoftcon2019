@@ -115,7 +115,7 @@
       <img class="google-message" src="<%= Routes.static_path(@conn, "/images/google_message.png") %>" alt="Location API not supported because HTTPS"/>
     </section>
     <section data-background-color="#f9f9f9">
-      <ul class="nice-list nice-list-small">
+      <ul class="nice-list nice-list-small nice-location-list">
         <li>
           <div class="image-list">
             <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/latitude.png") %>" alt="Icon charging"/>
@@ -169,8 +169,7 @@
       </pre>
     </section>
     <section id="nokia-slide" data-background-color="#f9f9f9">
-      <h1>Type</h1>
-      <ul class="nice-list">
+      <ul class="nice-list nice-list-small">
         <li>
           <div class="image-list">
             <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/landscape-primary.png") %>" alt="Nokia landscape"/>
@@ -254,7 +253,7 @@
       </pre>
     </section>
     <section data-background-color="#f9f9f9">
-      <ul class="nice-list">
+      <ul class="nice-list nice-list-small">
         <li>
           <div class="image-list">
             <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/touchstart.png") %>" alt="Touch start"/>

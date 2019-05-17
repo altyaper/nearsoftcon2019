@@ -46,9 +46,17 @@
   width: auto;
 }
 
+.nice-location-list.nice-list.nice-list-small li {
+  padding: 10px;
+}
+
+.nice-location-list.nice-list.nice-list-small .icon-list {
+  height: 100px;
+}
+
 .nice-list.nice-list-small li {
   font-size: 20px;
-  margin: 20px 0px;
+  margin: 10px;
   font-weight: bold;
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.1);

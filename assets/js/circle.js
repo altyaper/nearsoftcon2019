@@ -59,7 +59,8 @@ let members = []
 
 // helpers for adding and removing members
 function add({ id, color, r}) {
-  members.push({ id, color, r});
+  let obj = { id, color, r};
+  members.push(obj);
   render(members)
 }
 
@@ -165,7 +166,6 @@ function updateCircleAudioVideo(user_id, isAudioVideoSupported) {
 }
 
 function updateCircleAmbient(user_id, isAmbientSupported) {
-  console.log(isAmbientSupported);
   members = members.map(m => {
     if (user_id == m.id) {
       if (isAmbientSupported) {
