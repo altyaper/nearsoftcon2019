@@ -1,11 +1,12 @@
 import viewer from './viewer';
 import logger from './lib/error_report';
 import Battery from './lib/battery';
-import Location from './lib/location.js';
-import Orientation from './lib/orientation.js';
-import AudioVideo from './lib/audio_video.js';
-import Ambient from './lib/ambient.js';
-import TouchApi from './lib/touch.js';
+import Location from './lib/location';
+import Orientation from './lib/orientation';
+import AudioVideo from './lib/audio_video';
+import Ambient from './lib/ambient';
+import TouchApi from './lib/touch';
+import AudioExample from './lib/audio_example';
 
 let actions = (action, socket, channel) => {
   switch (action) {
@@ -60,6 +61,9 @@ let actions = (action, socket, channel) => {
       break;
     case 22:
       TouchApi.init(channel);
+      break;
+    case 25:
+      AudioExample.beep(100);
       break;
     default:
       channel.push("ppt:default");

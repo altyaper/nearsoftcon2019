@@ -1,4 +1,3 @@
-<a href="https://ivory-dramatic-steed.gigalixirapp.com">https://ivory-dramatic-steed.gigalixirapp.com</a>
 <div class="dot">
   <span id="circle-viewer" data-id="<%= assigns[:user_token] %>" class="circle-control"></span>
   <div id="top-options">
