@@ -10,6 +10,10 @@
   z-index: 100;
 }
 
+.web-button {
+  width: 300px;
+}
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

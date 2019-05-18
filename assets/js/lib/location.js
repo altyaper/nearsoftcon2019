@@ -1,4 +1,5 @@
 import logger from './error_report';
+import viewer from '../viewer';
 
 let Location = ((self) => {
 
@@ -20,7 +21,7 @@ let Location = ((self) => {
   }
 
   function success(position) {
-    setMap(position.coords.latitude, position.coords.longitude);
+    viewer.setLocation(position);
   }
 
   return {
