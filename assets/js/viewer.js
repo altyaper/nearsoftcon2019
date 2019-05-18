@@ -61,6 +61,5 @@ export default {
   changeColorYellow,
   changeColorGray,
   setLocation,
-  setSlideClass,
-  showLocationMarker
+  setSlideClass
 }

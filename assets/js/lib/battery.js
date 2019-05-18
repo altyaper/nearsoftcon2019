@@ -16,12 +16,8 @@ var Battery = (function(self) {
     var body = document.getElementsByTagName("BODY")[0];
     if (battery.charging === true) {
       chargingStateEl.textContent = 'Cargando';
-      body.classList.remove("dark-theme");
-      body.classList.add("bright");
     } else if (battery.charging === false) {
       chargingStateEl.textContent = 'Descargando';
-      body.classList.remove("bright");
-      body.classList.add("dark-theme");
     }
   }
 

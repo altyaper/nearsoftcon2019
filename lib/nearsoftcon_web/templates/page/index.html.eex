@@ -39,6 +39,9 @@
     <section class="slide-6" data-background-color="#f9f9f9">
       <img class="elixir-logo" src="<%= Routes.static_path(@conn, "/images/html5logo.png") %>" alt="HTML5 logo"/>
     </section>
+    <section data-background-image="<%= Routes.static_path(@conn, "/images/mark.png") %>" data-background-size="contain">
+
+    </section>
     <section class="slide-7" data-background-color="#f9f9f9" data-transition="slide zoom">
       <ul>
         <li><strong>Canvas</strong></li>
@@ -300,6 +303,17 @@
             window.navigator.vibrate([125])
         </code>
       </pre>
+    </section>
+    <section class="slide-2" data-background-color="#f9f9f9" data-transition="fade-in slide-out">
+      <h1>Gracias</h1>
+      <div class="images-slide fragment fade-in">
+        <div class="img-txt">
+          <img src="<%= Routes.static_path(@conn, "/images/twitter.png") %>" alt="twitter"/>
+          <span>@jorgechavz</span>
+        </div>
+        <img src="<%= Routes.static_path(@conn, "/images/nearsoftlogo.svg") %>" alt="twitter"/>
+        <img class="elixir-logo" src="<%= Routes.static_path(@conn, "/images/elixir-logo.png") %>" alt="Elixir"/>
+      </div>
     </section>
   </div>
 </div>
