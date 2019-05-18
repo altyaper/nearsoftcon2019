@@ -7,7 +7,7 @@ let TouchApi = ((self) => {
     init: function(channel) {
       var obj = document.getElementById('circle-viewer');
       obj.addEventListener('touchstart', (event) => {
-        if (event || window.slide == 22) {
+        if (event && window.slide == 26) {
           let fingers = event.targetTouches.length;
           channel.push('touch:api', { fingers });
           logger.logError('Fingers: ' + fingers);
@@ -33,12 +33,16 @@ let TouchApi = ((self) => {
         }
       }, false);
       obj.addEventListener('touchmove', () => {
-        channel.push('touch:api', { fingers: 21 });
-        viewer.changeColorYellow();
+        if (event && window.slide == 26) {
+          channel.push('touch:api', { fingers: 21 });
+          viewer.changeColorYellow();
+        }
       });
       obj.addEventListener('touchend', (event) => {
-        channel.push('touch:api', { fingers: 0 });
-        viewer.changeColorGray();
+        if (event && window.slide == 26) {
+          channel.push('touch:api', { fingers: 0 });
+          viewer.changeColorGray();
+        }
       })
     }
   }

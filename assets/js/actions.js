@@ -34,7 +34,7 @@ let actions = (action, socket, channel) => {
         logger.logError(error)
       });
       break;
-    case 18:
+    case 19:
       let orientation = Orientation.init();
       if(Orientation.isApiSupported()) {
         if(orientation.type) {
@@ -57,7 +57,7 @@ let actions = (action, socket, channel) => {
         channel.push('ambient:api', { audiovideo: true });
       }
       break;
-    case 25:
+    case 26:
       TouchApi.init(channel);
       break;
     case 29:

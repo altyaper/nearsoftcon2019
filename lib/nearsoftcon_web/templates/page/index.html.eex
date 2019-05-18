@@ -164,14 +164,6 @@
         </li>
       </ul>
     </section>
-    <section class="slide-12 slide-example">
-      <h1>Orientation</h1>
-      <pre>
-        <code class='javascript'>
-          var orientation = window.screen.orientation;
-        </code>
-      </pre>
-    </section>
     <section id="nokia-slide" data-background-color="#f9f9f9">
       <ul class="nice-list nice-list-small">
         <li>
@@ -190,7 +182,7 @@
           <div class="image-list">
             <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/portrait-primary.png") %>" alt="Nokia portrait"/>
           </div>
-          <span>Portrait Secondary</span>
+          <span>Portrait Primary</span>
         </li>
         <li>
           <div class="image-list">
@@ -199,6 +191,14 @@
           <span>Portrait Secondary</span>
         </li>
       </ul>
+    </section>
+    <section class="slide-12 slide-example">
+      <h1>Orientation</h1>
+      <pre>
+        <code class='javascript'>
+          var orientation = window.screen.orientation;
+        </code>
+      </pre>
     </section>
     <section>
       <img class="elixir-logo" src="<%= Routes.static_path(@conn, "/images/input.svg") %>" alt="Iphone meta information"/>
@@ -231,6 +231,9 @@
       </pre>
     </section>
     <section data-background-size="contain" data-background-image="<%= Routes.static_path(@conn, "/images/reading.png") %>"></section>
+    <section class="slide-example slide-example-small" data-background-color="#f9f9f9">
+      <h1>Touch != Click</h1>
+    </section>
     <section class="slide-example slide-example-small">
       <h1>Touch</h1>
       <pre>

@@ -48,6 +48,7 @@ let e = (socket) => {
   channel.on('change:slide', ({ slide }) => {
     if(!reveal.length) {
         logger.logError("Diapositiva: " + slide);
+        console.log(slide);
         actions.actions(slide, socket, channel);
     }
     window.slide = slide;
