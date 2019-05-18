@@ -40,7 +40,6 @@
       <img class="elixir-logo" src="<%= Routes.static_path(@conn, "/images/html5logo.png") %>" alt="HTML5 logo"/>
     </section>
     <section data-background-image="<%= Routes.static_path(@conn, "/images/mark.png") %>" data-background-size="contain">
-
     </section>
     <section class="slide-7" data-background-color="#f9f9f9" data-transition="slide zoom">
       <ul>
@@ -55,6 +54,8 @@
     </section>
     <section class="slide-8" data-background-color="#f9f9f9">
       <h1 class="huge-title">2014</h1>
+    </section>
+    <section data-background-size="contain" data-background-image="<%= Routes.static_path(@conn, "/images/devices.jpg") %>">
     </section>
     <section class="slide-9"></section>
     <section class="slide-9-1">
@@ -229,6 +230,7 @@
         </code>
       </pre>
     </section>
+    <section data-background-size="contain" data-background-image="<%= Routes.static_path(@conn, "/images/reading.png") %>"></section>
     <section class="slide-example slide-example-small">
       <h1>Touch</h1>
       <pre>
@@ -304,15 +306,19 @@
         </code>
       </pre>
     </section>
+    <section class="magic-slide">
+      <img src="https://media.giphy.com/media/12NUbkX6p4xOO4/giphy.gif" alt="Magic gif">
+    </section>
+    <section data-background-size="contain" data-background-image="<%= Routes.static_path(@conn, "/images/confort.jpeg") %>">
+    </section>
     <section class="slide-2" data-background-color="#f9f9f9" data-transition="fade-in slide-out">
       <h1>Gracias</h1>
-      <div class="images-slide fragment fade-in">
+      <div class="images-slide fade-in">
         <div class="img-txt">
           <img src="<%= Routes.static_path(@conn, "/images/twitter.png") %>" alt="twitter"/>
           <span>@jorgechavz</span>
         </div>
         <img src="<%= Routes.static_path(@conn, "/images/nearsoftlogo.svg") %>" alt="twitter"/>
-        <img class="elixir-logo" src="<%= Routes.static_path(@conn, "/images/elixir-logo.png") %>" alt="Elixir"/>
       </div>
     </section>
   </div>

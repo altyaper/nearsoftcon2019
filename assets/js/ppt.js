@@ -28,7 +28,6 @@ let e = (socket) => {
     });
 
   channel.on("user:entered", ({ user_id }) => {
-    logger.logError({user_id});
     var c = ctype.gray
     c['id'] = user_id;
     circle.add(c);
@@ -39,7 +38,6 @@ let e = (socket) => {
   });
 
   channel.on("user:leave", ({ user_id }) => {
-    logger.logError(JSON.stringify({leave: 'user leaved', user_id}));
     circle.remove({id: user_id});
   });
 
@@ -49,7 +47,7 @@ let e = (socket) => {
 
   channel.on('change:slide', ({ slide }) => {
     if(!reveal.length) {
-        logger.logError({change_slide: slide});
+        logger.logError("Diapositiva: " + slide);
         actions.actions(slide, socket, channel);
     }
     window.slide = slide;
@@ -116,7 +114,7 @@ let e = (socket) => {
   if(reveal.length) {
 
     Reveal.initialize({
-      controls: true,
+      controls: false,
       hash: true
     });
 

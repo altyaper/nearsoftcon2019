@@ -11,10 +11,7 @@ import Vibration from './lib/vibration';
 
 let actions = (action, socket, channel) => {
   switch (action) {
-    case 9:
-      viewer.changeColorGray()
-      break;
-    case 11:
+    case 13:
       Battery.init();
       Battery.getBattery().then((battery) => {
           if(battery) {
@@ -26,7 +23,7 @@ let actions = (action, socket, channel) => {
           }
       });
       break;
-    case 13:
+    case 15:
       Location.init();
       Location.getlocation().then((position) => {
         if (position.isPositionAvailable) {
@@ -37,7 +34,7 @@ let actions = (action, socket, channel) => {
         logger.logError(error)
       });
       break;
-    case 16:
+    case 18:
       let orientation = Orientation.init();
       if(Orientation.isApiSupported()) {
         if(orientation.type) {
@@ -50,25 +47,25 @@ let actions = (action, socket, channel) => {
         }
       }
       break;
-    case 19:
+    case 21:
       if (AudioVideo.isApiSupported()) {
           channel.push('audiovideo:api', { audiovideo: true });
       }
       break;
-    case 21:
+    case 23:
       if (Ambient.isApiSupported()) {
         channel.push('ambient:api', { audiovideo: true });
       }
       break;
-    case 22:
+    case 25:
       TouchApi.init(channel);
       break;
-    case 26:
+    case 29:
       if(AudioExample.isApiSupported()) {
         channel.push('audioexample:api', { audioexample: true });
       }
       break;
-    case 27:
+    case 30:
       if(Vibration.isApiSupported()) {
         channel.push('vibration:api', {vibration: true })
       }

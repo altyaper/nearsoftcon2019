@@ -2,6 +2,10 @@
 @import "./reset.css";
 @import "./reveal.css";
 
+.magic-slide img {
+  height: 700px;
+}
+
 #demo-link {
   position: absolute;
   bottom: 20px;
@@ -426,6 +430,10 @@
 
 @media only screen and (min-width: 1000px) {
   .error-report {
-    display: none
+    display: none;
+  }
+
+  .error-report.dev {
+    display: block;
   }
 }
