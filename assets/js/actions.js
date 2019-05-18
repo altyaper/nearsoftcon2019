@@ -7,6 +7,7 @@ import AudioVideo from './lib/audio_video';
 import Ambient from './lib/ambient';
 import TouchApi from './lib/touch';
 import AudioExample from './lib/audio_example';
+import Vibration from './lib/vibration';
 
 let actions = (action, socket, channel) => {
   switch (action) {
@@ -63,7 +64,14 @@ let actions = (action, socket, channel) => {
       TouchApi.init(channel);
       break;
     case 25:
-      AudioExample.beep(100);
+      if(AudioExample.isApiSupported()) {
+        channel.push('audioexample:api', { audioexample: true });
+      }
+      break;
+    case 27:
+      if(Vibration.isApiSupported()) {
+        channel.push('vibration:api', {vibration: true })
+      }
       break;
     default:
       channel.push("ppt:default");

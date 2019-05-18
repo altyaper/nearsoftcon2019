@@ -72,6 +72,18 @@ defmodule NearsoftconWeb.RoomChannel do
     {:noreply, socket}
   end
 
+  def handle_in("audioexample:api", audioexample, socket) do
+    user_id = socket.assigns.user_id
+    broadcast! socket, "audioexample:api", %{audioexample: audioexample, user_id: user_id}
+    {:noreply, socket}
+  end
+
+  def handle_in("vibration:api", vibration, socket) do
+    user_id = socket.assigns.user_id
+    broadcast! socket, "vibration:api", %{vibration: vibration, user_id: user_id}
+    {:noreply, socket}
+  end
+
   def handle_info({:after_join, user_id}, socket) do
     broadcast! socket, "user:entered", %{user_id: user_id}
     push socket, "join", %{status: "connected"}

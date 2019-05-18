@@ -2,10 +2,14 @@ import logger from './error_report';
 
 let AudioExample = ((self) => {
 
+  var audioCtx = new (window.AudioContext || window.webkitAudioContext || window.audioContext);
+
   return {
+    isApiSupported: function() {
+      if (audioCtx) return true
+      return false
+    },
     beep: function(duration, frequency, volume, type, callback) {
-      //if you have another AudioContext class use that one, as some browsers have a limit
-      var audioCtx = new (window.AudioContext || window.webkitAudioContext || window.audioContext);
       var oscillator = audioCtx.createOscillator();
       var gainNode = audioCtx.createGain();
 

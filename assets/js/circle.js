@@ -165,7 +165,7 @@ function updateCircleAudioVideo(user_id, isAudioVideoSupported) {
   updateAll(members);
 }
 
-function updateCircleAmbient(user_id, isAmbientSupported) {
+function updateCircleSupported(user_id, isAmbientSupported) {
   members = members.map(m => {
     if (user_id == m.id) {
       if (isAmbientSupported) {
@@ -228,6 +228,6 @@ export default {
   updateCircleLocation,
   updateCircleOrientation,
   updateCircleAudioVideo,
-  updateCircleAmbient,
+  updateCircleSupported,
   updateCircleTouch
 };

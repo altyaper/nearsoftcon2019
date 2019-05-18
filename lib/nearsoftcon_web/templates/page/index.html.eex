@@ -71,7 +71,7 @@
       </pre>
     </section>
     <section data-background-color="#f9f9f9">
-      <ul class="nice-list">
+      <ul class="nice-list nice-list-small">
         <li>
           <div class="image-list">
             <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/charging.png") %>" alt="Icon charging"/>
@@ -118,43 +118,43 @@
       <ul class="nice-list nice-list-small nice-location-list">
         <li>
           <div class="image-list">
-            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/latitude.png") %>" alt="Icon charging"/>
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/latitude.png") %>" alt="Icon latitude"/>
           </div>
           <span>latitude</span>
         </li>
         <li>
           <div class="image-list">
-            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/longitude.png") %>" alt="Icon chargingTime"/>
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/longitude.png") %>" alt="Icon longitude"/>
           </div>
           <span>longitude</span>
         </li>
         <li class="fragment fade-in">
           <div class="image-list">
-            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/altitude.png") %>" alt="Icon charging"/>
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/altitude.png") %>" alt="Icon altitude"/>
           </div>
           <span>altitude</span>
         </li>
         <li class="fragment fade-in">
           <div class="image-list">
-            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/accuracy.png") %>" alt="Icon charging"/>
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/accuracy.png") %>" alt="Icon accuracy"/>
           </div>
           <span>accuracy</span>
         </li>
         <li class="fragment fade-in">
           <div class="image-list">
-            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/altitude_accuracy.png") %>" alt="Icon charging"/>
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/altitude_accuracy.png") %>" alt="Icon altitudeAccuracy"/>
           </div>
           <span>altitudeAccuracy</span>
         </li>
         <li class="fragment fade-in">
           <div class="image-list">
-            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/heading.png") %>" alt="Icon charging"/>
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/heading.png") %>" alt="Icon heading"/>
           </div>
           <span>heading</span>
         </li>
         <li class="fragment fade-in">
           <div class="image-list">
-            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/speed.png") %>" alt="Icon charging"/>
+            <img class="icon-list" src="<%= Routes.static_path(@conn, "/images/speed.png") %>" alt="Icon speed"/>
           </div>
           <span>speed</span>
         </li>
@@ -292,6 +292,7 @@
         </code>
       </pre>
     </section>
+    <section data-background-size="contain" data-background-image="<%= Routes.static_path(@conn, "/images/synth.png") %>"></section>
     <section class="slide-example">
       <h1>Vibration</h1>
       <pre>

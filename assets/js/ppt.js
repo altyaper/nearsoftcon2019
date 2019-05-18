@@ -79,13 +79,25 @@ let e = (socket) => {
 
   channel.on('ambient:api', ({ ambient, user_id}) => {
     if(reveal.length) {
-      circle.updateCircleAmbient(user_id, ambient.ambient);
+      circle.updateCircleSupported(user_id, ambient.ambient);
     }
   });
 
   channel.on('touch:api', ({ fingers, user_id}) => {
     if(reveal.length) {
       circle.updateCircleTouch(user_id, fingers.fingers);
+    }
+  });
+
+  channel.on('audioexample:api', ({ audioexample, user_id}) => {
+    if(reveal.length) {
+      circle.updateCircleSupported(user_id, audioexample.audioexample);
+    }
+  });
+
+  channel.on('vibration:api', ({ vibration, user_id}) => {
+    if(reveal.length) {
+      circle.updateCircleSupported(user_id, vibration.vibration);
     }
   });
 
