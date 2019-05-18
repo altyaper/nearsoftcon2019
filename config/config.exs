@@ -21,7 +21,7 @@ config :phoenix, :json_library, Jason
 config :nearsoftcon,
   circle_salt: System.get_env("CIRCLE_SALT"),
   secret_link: System.get_env("SECRET_ADMIN"),
-  demo_link: "bit.ly/nearsoftcon2019"
+  demo_link: "http://bit.ly/nearsoftcon2019"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

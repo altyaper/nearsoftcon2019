@@ -63,7 +63,7 @@ let actions = (action, socket, channel) => {
     case 22:
       TouchApi.init(channel);
       break;
-    case 25:
+    case 26:
       if(AudioExample.isApiSupported()) {
         channel.push('audioexample:api', { audioexample: true });
       }

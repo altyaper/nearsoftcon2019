@@ -6,7 +6,7 @@
     <%= render NearsoftconWeb.PartialView, "orientation.html", assigns %>
   </div>
 </div>
-<div class="error-report">
+<div class="error-report <%= @environment %>">
   <a href="#">X</a>
   <div class="inner-report">
 

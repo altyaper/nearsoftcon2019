@@ -1,10 +1,10 @@
 <div class="dots">
 
 </div>
+<a href="http://<%= @demo_link %>" id="demo-link" target="_blank"><%= @demo_link %></a>
 <div class="reveal">
   <div class="slides">
     <section class="slide-1" data-background-color="#f9f9f9" data-transition="slide-in fade-out">
-      <a href="#"><%= @demo_link %></a>
       <h1>DEMO</h1>
       <!-- <img class="example" src="<%= Routes.static_path(@conn, "/images/example.svg") %>" alt="Iphone meta information"/> -->
       <img class="fragment fade-in" src="<%= Routes.static_path(@conn, "/images/hart.png") %>" alt="Hart attact"/>
@@ -31,7 +31,7 @@
     </section>
     <section class="slide-4" data-background-color="#f9f9f9">
       <h1 class="huge-title">2008</h1>
-      <img class="web-button fragment" src="<%= Routes.static_path(@conn, "/images/web_button.jpeg") %>" alt="Web 2.0 button"/>
+      <img class="web-button" src="<%= Routes.static_path(@conn, "/images/flashlogo.png") %>" alt="Flash logo"/>
     </section>
     <section class="slide-5" data-background-color="#f9f9f9">
       <img class="steave-thoughts" src="<%= Routes.static_path(@conn, "/images/flash_steave.png") %>" alt="Flash Steave Jobs"/>
@@ -220,7 +220,7 @@
         <code class='javascript'>
           window.addEventListener('devicelight', (event) => {
 
-            console.log(event.value);
+            console.log(event.value + ' lux');
 
           });
         </code>
@@ -277,6 +277,7 @@
     <section class="slide-14-1">
       <img class="elixir-logo" src="<%= Routes.static_path(@conn, "/images/output.svg") %>" alt="Iphone meta information"/>
     </section>
+    <section data-background-size="contain" data-background-image="<%= Routes.static_path(@conn, "/images/synth.png") %>"></section>
     <section class="slide-14 slide-example">
       <h1>Audio</h1>
       <pre>
@@ -292,7 +293,6 @@
         </code>
       </pre>
     </section>
-    <section data-background-size="contain" data-background-image="<%= Routes.static_path(@conn, "/images/synth.png") %>"></section>
     <section class="slide-example">
       <h1>Vibration</h1>
       <pre>
